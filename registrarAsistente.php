@@ -46,8 +46,8 @@ include_once("menu.php");
             <div class="card-body">
               <div class="table-responsive">
                 <!-- form -->
-                <form class="form" method="POST" action="registro2.php">
-                  <table>
+                <form class="form" method="POST" action="ejecutarRegistrarAsistente.php">
+                  <table  style="margin: 0 auto;">
                     <tr>
             <td>&nbsp;</td>
 
