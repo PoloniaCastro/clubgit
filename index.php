@@ -23,7 +23,7 @@ include_once("menu.php");
 
 ?>
               <div class="col-xl-3 col-sm-6">
-                <div class="card text-white bg-danger o-hidden h-100">
+                <div class="card text-white bg-info o-hidden h-100">
                   <div class="card-body">
                     <div class="card-body-icon">
                       <i class="fas fa-fw fa-life-ring"></i>
