@@ -27,9 +27,7 @@
 
   <body id="page-top">
 
-    <?
-session_start();
-?>
+  
 <?
 include_once("menu.php");
 ?>

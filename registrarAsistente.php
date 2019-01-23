@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <?php
-
+include_once("menu.php");
 $mensaje = "";
 $rpRegistro = 0;
 $rpRegistro = $_SESSION["id2"];
-include_once("menu.php");
+
 ?>
 
           <!-- DataTables Example -->
@@ -74,6 +74,11 @@ include_once("menu.php");
                     <tr>
             <td>&nbsp;</td>
 
+                    </tr>
+                    <tr>
+                      <td>Repartidor</td>
+                      <td><select name="SelectRepartidor" ></td>
+                    <td>&nbsp;</td>
                     </tr>
                     <tr>
                       <td></td>
