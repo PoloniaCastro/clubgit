@@ -35,16 +35,43 @@
             <a class="dropdown-item" href="#">Nada aun</a>
           </div>
         </li>
+
+<? 
+
+if (!$_SESSION) {
+  ?>
+
+
+        <li class="nav-item dropdown no-arrow">
+          <a class="nav-link dropdown-toggle" href="#" data-toggle="modal" data-target="#loginModal" role="button"  aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-user-circle fa-fw"></i>Iniciar Sesión
+          </a>
+          
+        </li>
+
+<?
+}else{
+
+  ?>
+ 
         <li class="nav-item dropdown no-arrow">
           <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-user-circle fa-fw"></i><?echo $_SESSION['nombre'];?>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-            <a class="dropdown-item" href="#">Configuración</a>
-            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Otra cosa<div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
           </div>
         </li>
+
+<?
+}
+
+?></a>
+            
+
+
+
       </ul>
 
     </nav>
@@ -112,7 +139,61 @@
           <div class="modal-body">Presiona salir para cerrar tu sesión</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-            <a class="btn btn-primary" href="login.html">SALIR</a>
+            <a class="btn btn-primary" href="logout.php">SALIR</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+                  <!-- login Modal-->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">¿Quiéres abrir sesión?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+    <form class="form" method="POST" action="inicioSesion2.php">
+      <table>
+
+        <tr>
+          <td>Correo</td>
+          <td><input type="text" class="form-control" name="txtCorreo" placeholder="correo@algo.com"/></td>
+        <td>&nbsp;</td>
+        </tr>
+        
+        <tr>
+          <td>Contraseña</td>
+          <td><input type="password" style="width:300px;height:30px" class="form-control form-control- " name="txtContrasenia" placeholder="Contraseña"/></td>
+          </th>
+        </tr>
+        
+        <tr>
+          <td></td>
+          <td><div>
+            <button type="submit" class="btn btn-primary btn-lg">Ingresar</button>
+          </div></td>
+          <th></th>
+        </tr>
+      </table>
+
+
+
+
+
+
+
+
+  </form>
+
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+            
           </div>
         </div>
       </div>

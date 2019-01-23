@@ -25,7 +25,7 @@ else
   if($fila2)
   {
 
-    header("location: s.php");
+    header("location: index.php");
     //echo "hola ".$_SESSION['correo'];
     //echo "hola";
      $_SESSION['nombre']= $fila2['nombrerp'];
