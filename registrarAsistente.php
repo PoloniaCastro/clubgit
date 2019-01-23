@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <?php
-
 $mensaje = "";
 $rpRegistro = 0;
-$rpRegistro = $_SESSION["id2"];
 include_once("menu.php");
+$rpRegistro = $_SESSION["id2"];
 ?>
 
           <!-- DataTables Example -->
