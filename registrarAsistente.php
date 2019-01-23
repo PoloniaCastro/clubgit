@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <?php
+session_start();
 $mensaje = "";
-$cbbxi = 0;
-$cbbxi = $_GET["cmbi"];
+$rpRegistro = 0;
+$rpRegistro = $_SESSION["id2"];
 ?>
 <html lang="en">
 
@@ -32,9 +33,7 @@ $cbbxi = $_GET["cmbi"];
 
   <body id="page-top">
 
-    <?
-session_start();
-?>
+
 <?
 include_once("menu.php");
 ?>
@@ -75,19 +74,19 @@ include_once("menu.php");
                     </tr>
                     <tr>
                       <td>RP</td>
-                      <td><select name="cmb">
+                      <td><select name="selecionRp">
                         <option value="0">Seleccione</option>
                         <?
                         include_once 'clases/conexion.php';
 
-                            $db = mysqli_select_db( $conexion, $basededatos ) or die ( "Upps! Pues va a ser que no se ha podido conectar a la base de datos" );
+                          //  $db = mysqli_select_db( $conexion, $basededatos ) or die ( "Upps! Pues va a ser que no se ha podido conectar a la base de datos" );
                            // establecer y realizar consulta. guardamos en variable.
                             $consulta = "select id, nombrerp from rp";
                             $resultado = mysqli_query( $conexion, $consulta ) or die ( "Algo ha ido mal en la consulta a la base de datos");
 
                             while ($columna = mysqli_fetch_array( $resultado ))
                           {
-                            if ($cbbxi==$columna['id'])
+                            if ($rpRegistro==$columna['id'])
                             {
                               $varfea="selected";
 

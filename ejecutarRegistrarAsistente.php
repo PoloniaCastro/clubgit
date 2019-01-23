@@ -9,7 +9,7 @@ $mensaje = "";
 
  $rut = $_POST["txtRut"];
  $dv = $_POST["txtDv"];
- $cbbxi = $_POST["cmb"];
+ $rpRegistro = $_POST["selecionRp"];
 
 $rutUnido=$rut."-".$dv;
 /*
@@ -71,14 +71,14 @@ validación de rut
 
 
 
-              $consulta = "INSERT INTO asistencia(nombre, rut, rp) VALUES ('".$nombre."', '".$rutUnido."', '".$cbbxi."')";
+              $consulta = "INSERT INTO asistencia(nombre, rut, rp) VALUES ('".$nombre."', '".$rutUnido."', '".$rpRegistro."')";
               $resultado = mysqli_query( $conexion, $consulta ) or die ( "Algo ha ido mal en la consulta a la base de datos");
 
               if($resultado)
               {
                 echo "<script>
                            alert('Registro exitoso');
-                           window.location= 'registrarAsistente.php?cmbi=$cbbxi'
+                           window.location= 'registrarAsistente.php?selecionRp=$rpRegistro'
                </script>";
 
 
@@ -88,14 +88,14 @@ validación de rut
 
               echo "<script>
                  alert('RUT YA INGRESADO ');
-                 window.location= 'registrarAsistente.php?cmbi=$cbbxi'
+                 window.location= 'registrarAsistente.php?selecionRp=$rpRegistro'
                 </script>";
               }
 
   }else{
     echo "<script>
          alert('Rut incorrecto');
-         window.location= 'registrarAsistente.php?cmbi=$cbbxi'
+         window.location= 'registrarAsistente.php?selecionRp=$rpRegistro'
         </script>";
   }
 
