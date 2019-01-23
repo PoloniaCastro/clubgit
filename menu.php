@@ -93,7 +93,7 @@ if (!$_SESSION) {
           </a>
           <div class="dropdown-menu" aria-labelledby="pagesDropdown">
             <h6 class="dropdown-header">Asistentes</h6>
-            <a class="dropdown-item" href="registrarAsistentes.php">Registrar</a>
+            <a class="dropdown-item" href="registrarAsistente.php">Registrar</a>
             <div class="dropdown-divider"></div>
             <h6 class="dropdown-header">Repartidores</h6>
             <a class="dropdown-item" href="#">Registrar</a>
