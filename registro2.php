@@ -78,24 +78,24 @@ validación de rut
               {
                 echo "<script>
                            alert('Registro exitoso');
-                           window.location= 'registro.php?cmbi=$cbbxi'
+                           window.location= 'registrarAsistente.php?cmbi=$cbbxi'
                </script>";
 
 
 
               }
             }else {
-              
+
               echo "<script>
                  alert('RUT YA INGRESADO ');
-                 window.location= 'registro.php?cmbi=$cbbxi'
+                 window.location= 'registrarAsistente.php?cmbi=$cbbxi'
                 </script>";
               }
 
   }else{
     echo "<script>
          alert('Rut incorrecto');
-         window.location= 'registro.php?cmbi=$cbbxi'
+         window.location= 'registrarAsistente.php?cmbi=$cbbxi'
         </script>";
   }
 
