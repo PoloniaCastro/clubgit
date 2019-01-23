@@ -181,14 +181,14 @@ if (!$_SESSION) {
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">¿Quiéres abrir sesión?</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Iniciar una nueva sesión</h5>
             <button class="close" type="button" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">×</span>
             </button>
           </div>
           <div class="modal-body">
 
-    <form class="form" method="POST" action="inicioSesion2.php">
+    <form class="form" method="POST" action="ejecutarInicioSesion.php">
       <table>
 
         <tr>
@@ -223,7 +223,7 @@ if (!$_SESSION) {
 
           </div>
           <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cerrar</button>
 
           </div>
         </div>
