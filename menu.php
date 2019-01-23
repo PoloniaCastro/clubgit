@@ -101,9 +101,9 @@ if (!$_SESSION) {
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="charts.html">
+          <a class="nav-link" href="listar.php">
             <i class="fas fa-fw fa-chart-area"></i>
-            <span>Listas</span></a>
+            <span>Listar</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="tables.html">
