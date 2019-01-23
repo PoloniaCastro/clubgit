@@ -1,17 +1,10 @@
 <!DOCTYPE html>
 <?php
-<<<<<<< HEAD
 include_once("menu.php");
 $mensaje = "";
 $rpRegistro = 0;
 $rpRegistro = $_SESSION["id2"];
 
-=======
-$mensaje = "";
-$rpRegistro = 0;
-include_once("menu.php");
-$rpRegistro = $_SESSION["id2"];
->>>>>>> 36fac6088392159f87016967c0e6dc126b2fe347
 ?>
 
           <!-- DataTables Example -->
