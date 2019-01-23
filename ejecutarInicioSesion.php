@@ -29,7 +29,7 @@ else
     //echo "hola";
      $_SESSION['nombre']= $fila2['nombrerp'];
      $_SESSION['id2'] = $fila2['id'];
-  header("location: index.php");
+      header("location: index.php");
      //echo "hola".$_SESSION['nombre'];
 
   }
