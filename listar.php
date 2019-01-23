@@ -100,7 +100,7 @@ include_once("menu.php");
 
                     	  echo "<tr><td>".utf8_encode($columna['nombre'])."</td><td>".utf8_encode($columna['apellido'])."</td><td>".$columna['nombrerp']."</td><td>".$columna['repartidor']."</td><td>".$columna['estate']."</td>
 
-                        <td><a type='submit'style='color:black;' class='btn btn-primary btn-lg' href='listaE.php?id_asistencia=".$columna['id_asistencia']."&id_rp=".$rpapp." '>Eliminar</a></td></tr>  ";
+                        <td><a type='submit'style='color:black;' class='btn btn-primary btn-lg' href='ejecutarEliminarLista.php?id_asistencia=".$columna['id_asistencia']."&id_rp=".$rpapp." '>Eliminar</a></td></tr>  ";
 
                     	}
 
