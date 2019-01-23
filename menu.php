@@ -19,7 +19,7 @@
             <span class="badge badge-danger">0</span>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="alertsDropdown">
-            <a class="dropdown-item" href="#">Nada aun</a>          
+            <a class="dropdown-item" href="#">Nada aun</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Nada aun</a>
           </div>
@@ -30,13 +30,13 @@
             <span class="badge badge-danger">0</span>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagesDropdown">
-            <a class="dropdown-item" href="#">Nada aun</a>          
+            <a class="dropdown-item" href="#">Nada aun</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Nada aun</a>
           </div>
         </li>
 
-<? 
+<?
 
 if (!$_SESSION) {
   ?>
@@ -46,14 +46,14 @@ if (!$_SESSION) {
           <a class="nav-link dropdown-toggle" href="#" data-toggle="modal" data-target="#loginModal" role="button"  aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-user-circle fa-fw"></i>Iniciar Sesión
           </a>
-          
+
         </li>
 
 <?
 }else{
 
   ?>
- 
+
         <li class="nav-item dropdown no-arrow">
           <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-user-circle fa-fw"></i><?echo $_SESSION['nombre'];?>
@@ -68,7 +68,7 @@ if (!$_SESSION) {
 }
 
 ?></a>
-            
+
 
 
 
@@ -97,7 +97,7 @@ if (!$_SESSION) {
             <div class="dropdown-divider"></div>
             <h6 class="dropdown-header">Repartidores</h6>
             <a class="dropdown-item" href="#">Registrar</a>
-            
+
           </div>
         </li>
         <li class="nav-item">
@@ -124,7 +124,7 @@ if (!$_SESSION) {
             <li class="breadcrumb-item active">Variable de inicio</li>
           </ol>
 
-        
+
 
               <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -165,13 +165,13 @@ if (!$_SESSION) {
           <td><input type="text" class="form-control" name="txtCorreo" placeholder="correo@algo.com"/></td>
         <td>&nbsp;</td>
         </tr>
-        
+
         <tr>
           <td>Contraseña</td>
           <td><input type="password" style="width:300px;height:30px" class="form-control form-control- " name="txtContrasenia" placeholder="Contraseña"/></td>
           </th>
         </tr>
-        
+
         <tr>
           <td></td>
           <td><div>
@@ -193,7 +193,7 @@ if (!$_SESSION) {
           </div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-            
+
           </div>
         </div>
       </div>

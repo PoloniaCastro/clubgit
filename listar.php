@@ -66,24 +66,16 @@ include_once("menu.php");
                   </tfoot>
                   <tbody>
                     <?php
+                    include_once("clases/conexion.php");
                     	// Ejemplo de conexión a base de datos MySQL con PHP.
                     	//
                     	// Ejemplo realizado por Oscar Abad Folgueira: http://www.oscarabadfolgueira.com y https://www.dinapyme.com
 
                     	// Datos de la base de datos
-                    	$rpapp = $_GET['rp'];
-                    	$usuario = "root";
-                    	$password = "";
-                    	$servidor = "localhost";
-                    	$basededatos = "grupomac_club";
-                    	$inception = 0;
-                    	$rutsql=0;
-                    	//$token = $rutapp2;
-                        	// creación de la conexión a la base de datos con mysql_connect()
-                    	$conexion = mysqli_connect( $servidor, $usuario, "$password" ) or die ("No se ha podido conectar al servidor de Base de datos");
+                    	$rpapp = $_SESSION['id2'];
 
                     	// Selección del a base de datos a utilizar
-                    	$db = mysqli_select_db( $conexion, $basededatos ) or die ( "Upps! Pues va a ser que no se ha podido conectar a la base de datos" );
+                    	//$db = mysqli_select_db( $conexion, $basededatos ) or die ( "Upps! Pues va a ser que no se ha podido conectar a la base de datos" );
                     	// establecer y realizar consulta. guardamos en variable.
                     	$consulta = "select * from asistencia inner join rp on rp.id=asistencia.rp inner join estate on estate.id=asistencia.estado WHERE rp=".$rpapp." ORDER BY repartidor DESC, estado DESC";
                     	$consulta2 = "SELECT count(*) as total from asistencia WHERE `estado`=1 and rp=".$rpapp."";
@@ -124,7 +116,7 @@ include_once("menu.php");
                 </form>
               </div>
             </div>
-            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+          <!-- <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>-->
           </div>
 
         </div>
@@ -134,7 +126,7 @@ include_once("menu.php");
         <footer class="sticky-footer">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
-              <span>Copyright © Your Website 2018</span>
+              <span>Copyright © Grupo Macer 2019</span>
             </div>
           </div>
         </footer>

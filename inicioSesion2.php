@@ -21,18 +21,19 @@ else
 
   $consulta1 = "SELECT * FROM rp WHERE contrasenia = '$contrasenia' ";
   $resultado2 = mysqli_query( $conexion, $consulta1 ) or die ( "Algo ha ido mal en la consulta a la base de datos");
-  $fila2 = mysqli_fetch_array($resultado2);
-  if($fila2)
+  while ($fila2 = mysqli_fetch_array( $resultado2 ))
   {
 
-    header("location: index.php");
+
     //echo "hola ".$_SESSION['correo'];
     //echo "hola";
      $_SESSION['nombre']= $fila2['nombrerp'];
+     $_SESSION['id2'] = $fila2['id'];
+  header("location: index.php");
      //echo "hola".$_SESSION['nombre'];
 
   }
-  else {
+   {
     echo "Contraseña incorrecta";
   }
 }
