@@ -14,7 +14,11 @@ include_once("menu.php");
              
              <!-- Bucle de fiestas-->
 <?
-            $rpapp=0;
+if ($_SESSION) {
+
+            if ($_SESSION['permisos']==1) {
+
+                          $rpapp=0;
              include_once("clases/conexion.php");
              $consulta2 = "SELECT * FROM fiestas WHERE `empresa`=".$rpapp."";
             $resultado2 = mysqli_query( $conexion, $consulta2 ) or die ( "Algo ha ido mal en la consulta a la base de datos. ".$rpapp." ");
@@ -42,7 +46,19 @@ include_once("menu.php");
               </div>
 <?
  }
+
+              
+            }else{
+echo "string";
+
+            }
+
+          }else{
+            echo "iniciar sesion";
+          }
 ?>
+
+
 </div>
 
             </div>
