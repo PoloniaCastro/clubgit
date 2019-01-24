@@ -109,6 +109,22 @@ if (!$_SESSION) {
 
     <div id="wrapper">
 
+<? 
+        if (!$_SESSION) {
+  ?>
+
+      <ul class="sidebar navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>DEBES INICIAR SESIÓN</span>
+          </a>
+        </li>
+</ul>
+<?
+} else {
+?>
+
       <!-- Sidebar -->
       <ul class="sidebar navbar-nav">
         <li class="nav-item active">
@@ -117,6 +133,7 @@ if (!$_SESSION) {
             <span>Menú</span>
           </a>
         </li>
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-fw fa-folder"></i>
@@ -127,8 +144,8 @@ if (!$_SESSION) {
             <a class="dropdown-item" href="registrarAsistente.php">Registrar</a>
             <div class="dropdown-divider"></div>
             <h6 class="dropdown-header">Repartidores</h6>
-            <a class="dropdown-item" href="#">Registrar</a>
-
+            <a class="dropdown-item" href="registrarRepartidores.php">Registrar</a>
+            <a class="dropdown-item" href="#">Listar Repartidores</a>
           </div>
         </li>
         <li class="nav-item">
@@ -142,6 +159,10 @@ if (!$_SESSION) {
             <span>Eliminar</span></a>
         </li>
       </ul>
+
+<?
+}
+?>
 
       <div id="content-wrapper">
 
