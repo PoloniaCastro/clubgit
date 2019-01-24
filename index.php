@@ -49,12 +49,12 @@ if ($_SESSION) {
 
               
             }else{
-echo "string";
+echo "Bienvenido RP, para ingresar gente revise su menú lateral";
 
             }
 
           }else{
-            echo "iniciar sesion";
+            echo "Para ver este contenido debe iniciar sesión";
           }
 ?>
 
