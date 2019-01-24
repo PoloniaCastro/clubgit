@@ -15,7 +15,7 @@ include_once("menu.php");
                   <thead>
                     <tr>
                       <th>Nombre</th>
-                      <th>Apellido</th>
+                     
                       <th>RP</th>
                       <th>Repartidor</th>
                       <th>Asistencia</th>
@@ -25,7 +25,7 @@ include_once("menu.php");
                   <tfoot>
                     <tr>
                       <th>Nombre</th>
-                      <th>Apellido</th>
+                      
                       <th>RP</th>
                       <th>Repartidor</th>
                       <th>Asistencia</th>
