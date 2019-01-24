@@ -6,7 +6,7 @@ include_once("menu.php");
           <div class="card mb-3">
             <div class="card-header">
               <i class="fas fa-table"></i>
-              Lista de asistentes</div>
+              Lista de repartidores</div>
             <div class="card-body">
               <div class="table-responsive">
                 <!-- form -->
@@ -15,65 +15,38 @@ include_once("menu.php");
                   <thead>
                     <tr>
                       <th>Nombre</th>
-                      <th>Apellido</th>
+
                       <th>RP</th>
-                      <th>Repartidor</th>
-                      <th>Asistencia</th>
                       <th></th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
                       <th>Nombre</th>
-                      <th>Apellido</th>
+
                       <th>RP</th>
-                      <th>Repartidor</th>
-                      <th>Asistencia</th>
                       <th></th>
                     </tr>
                   </tfoot>
                   <tbody>
                     <?php
                     include_once("clases/conexion.php");
-                    	// Ejemplo de conexión a base de datos MySQL con PHP.
-                    	//
-                    	// Ejemplo realizado por Oscar Abad Folgueira: http://www.oscarabadfolgueira.com y https://www.dinapyme.com
 
-                    	// Datos de la base de datos
                     	$rpapp = $_SESSION['id2'];
 
-
-                    	// Selección del a base de datos a utilizar
-                    	//$db = mysqli_select_db( $conexion, $basededatos ) or die ( "Upps! Pues va a ser que no se ha podido conectar a la base de datos" );
-                    	// establecer y realizar consulta. guardamos en variable.
-                    	$consulta = "select * from asistencia
-                      inner join rp on rp.id=asistencia.rp
-                       inner join estate on estate.id=asistencia.estado
-                       inner join repartidores as re on re.id_repartidor = asistencia.repartidor  WHERE rp=".$rpapp."
-                       ORDER BY repartidor DESC, estado DESC";
-                    	$consulta2 = "SELECT count(*) as total from asistencia WHERE `estado`=1 and rp=".$rpapp."";
-                    	$resultado2 = mysqli_query( $conexion, $consulta2 ) or die ( "Algo ha ido mal en la consulta a la base de datos.");
-                    	$resultado = mysqli_query( $conexion, $consulta ) or die ( "Algo ha ido mal en la consulta a la base de datos");
+                      $consulta1= "SELECT * FROM repartidores
+                      inner join rp on rp.id = repartidores.id_rp where id_rp = ".$rpapp."
+                      ORDER by id_rp DESC";
+                      $resultado1 = mysqli_query( $conexion, $consulta1 ) or die ( "Algo ha ido mal en la consulta a la base de datos.");
 
 
-
-
-                    		while ($columna2 = mysqli_fetch_array( $resultado2 ))
+                    	while ($columna = mysqli_fetch_array( $resultado1 ))
                     	{
 
-                    	  echo "<h1> Usted tuvo ";
-                    	  echo  $columna2['total'];
-                         echo " asistentes </h1>";
-                    	}
 
+                    	  echo "<tr><td>".utf8_encode($columna['nombre_repartidor'])."</td><td>".utf8_encode($columna['nombrerp'])."</td>
 
-                    	while ($columna = mysqli_fetch_array( $resultado ))
-                    	{
-                    	  $rutsql =  $columna['rut'];
-
-                    	  echo "<tr><td>".utf8_encode($columna['nombre'])."</td><td>".utf8_encode($columna['apellido'])."</td><td>".$columna['nombrerp']."</td><td>".$columna['nombre_repartidor']."</td><td>".$columna['estate']."</td>
-
-                        <td><a type='submit'style='color:black;' class='btn btn-primary btn-lg' href='ejecutarEliminarLista.php?id_asistencia=".$columna['id_asistencia']."&id_rp=".$rpapp." '>Eliminar</a></td></tr>  ";
+                        <td><a type='submit'style='color:black;' class='btn btn-primary btn-lg' href='ejecutarEliminarListaRepartidores.php?id_repartidor=".$columna['id_repartidor']." &id_rp=".$rpapp."'>Eliminar</a></td></tr>  ";
 
                     	}
 

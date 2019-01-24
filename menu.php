@@ -109,7 +109,7 @@ if (!$_SESSION) {
 
     <div id="wrapper">
 
-<? 
+<?
         if (!$_SESSION) {
   ?>
 
@@ -145,7 +145,7 @@ if (!$_SESSION) {
             <div class="dropdown-divider"></div>
             <h6 class="dropdown-header">Repartidores</h6>
             <a class="dropdown-item" href="registrarRepartidores.php">Registrar</a>
-            <a class="dropdown-item" href="#">Listar Repartidores</a>
+            <a class="dropdown-item" href="listarRepartidores.php">Listar Repartidores</a>
           </div>
         </li>
         <li class="nav-item">
