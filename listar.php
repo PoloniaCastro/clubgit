@@ -42,10 +42,15 @@ include_once("menu.php");
                     	// Datos de la base de datos
                     	$rpapp = $_SESSION['id2'];
 
+
                     	// Selección del a base de datos a utilizar
                     	//$db = mysqli_select_db( $conexion, $basededatos ) or die ( "Upps! Pues va a ser que no se ha podido conectar a la base de datos" );
                     	// establecer y realizar consulta. guardamos en variable.
-                    	$consulta = "select * from asistencia inner join rp on rp.id=asistencia.rp inner join estate on estate.id=asistencia.estado WHERE rp=".$rpapp." ORDER BY repartidor DESC, estado DESC";
+                    	$consulta = "select * from asistencia
+                      inner join rp on rp.id=asistencia.rp
+                       inner join estate on estate.id=asistencia.estado
+                       inner join repartidores as re on re.id_repartidor = asistencia.repartidor  WHERE rp=".$rpapp."
+                       ORDER BY repartidor DESC, estado DESC";
                     	$consulta2 = "SELECT count(*) as total from asistencia WHERE `estado`=1 and rp=".$rpapp."";
                     	$resultado2 = mysqli_query( $conexion, $consulta2 ) or die ( "Algo ha ido mal en la consulta a la base de datos.");
                     	$resultado = mysqli_query( $conexion, $consulta ) or die ( "Algo ha ido mal en la consulta a la base de datos");
@@ -66,7 +71,7 @@ include_once("menu.php");
                     	{
                     	  $rutsql =  $columna['rut'];
 
-                    	  echo "<tr><td>".utf8_encode($columna['nombre'])."</td><td>".utf8_encode($columna['apellido'])."</td><td>".$columna['nombrerp']."</td><td>".$columna['repartidor']."</td><td>".$columna['estate']."</td>
+                    	  echo "<tr><td>".utf8_encode($columna['nombre'])."</td><td>".utf8_encode($columna['apellido'])."</td><td>".$columna['nombrerp']."</td><td>".$columna['nombre_repartidor']."</td><td>".$columna['estate']."</td>
 
                         <td><a type='submit'style='color:black;' class='btn btn-primary btn-lg' href='ejecutarEliminarLista.php?id_asistencia=".$columna['id_asistencia']."&id_rp=".$rpapp." '>Eliminar</a></td></tr>  ";
 

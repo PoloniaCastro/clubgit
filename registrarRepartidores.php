@@ -11,11 +11,11 @@ $rpRegistro = $_SESSION["id2"];
           <div class="card mb-3">
             <div class="card-header">
               <i class="fas fa-table"></i>
-              Registro de asistentes</div>
+              Registro de repartidores</div>
             <div class="card-body">
               <div class="table-responsive">
                 <!-- form -->
-                <form class="form" method="POST" action="ejecutarRegistrarAsistente.php">
+                <form class="form" method="POST" action="ejecutarRegistrarRepartidores.php">
                   <table  style="margin: 0 auto;">
                     <tr>
             <td>&nbsp;</td>
@@ -23,87 +23,24 @@ $rpRegistro = $_SESSION["id2"];
                     </tr>
                     <tr>
                       <td>Nombre</td>
-                      <td><input type="text" class="form-control" name="txtNombre" placeholder="Nombre"/></td>
+                      <td><input type="text" class="form-control" name="txtNombreRepartidores" placeholder="Nombre"/></td>
                     <td>&nbsp;</td>
                     </tr>
                     <tr>
             <td>&nbsp;</td>
 
                     </tr>
-                    <tr>
-                      <td>Rut</td>
-                      <td><input type="text" style="width:300px;height:30px" class="form-control form-control- " name="txtRut" placeholder="Rut sin puntos (k minúscula) ->"/></td>
-                      <td>-</td>
-                      <th><input type="text" style="width:80px;height:30px" class="form-control form-control-xs " name="txtDv" placeholder="dv"/>
-                    </th>
-                    </tr>
+
                     <tr>
             <td>&nbsp;</td>
 
                     </tr>
-                    <tr>
-                      <td>RP</td>
-                      <td><select name="selecionRp">
-                        <option value="0">Seleccione</option>
-                        <?
-                        include_once 'clases/conexion.php';
 
-                          //  $db = mysqli_select_db( $conexion, $basededatos ) or die ( "Upps! Pues va a ser que no se ha podido conectar a la base de datos" );
-                           // establecer y realizar consulta. guardamos en variable.
-                            $consulta = "select id, nombrerp from rp";
-                            $resultado = mysqli_query( $conexion, $consulta ) or die ( "Algo ha ido mal en la consulta a la base de datos");
-
-                            while ($columna = mysqli_fetch_array( $resultado ))
-                          {
-                            if ($rpRegistro==$columna['id'])
-                            {
-                              $varfea="selected";
-
-                            }else {
-                              $varfea="";
-                            }
-                            echo '<option '.$varfea.' value="'.$columna['id'].'">'.$columna['nombrerp'].'</option>';
-
-                          }
-
-
-                        ?>
-            </td>
-                      <th></th>
-                    </tr>
                     <tr>
             <td>&nbsp;</td>
 
                     </tr>
-                    <tr>
-                      <td>Repartidor</td>
-                      <td><select name="SelectRepartidor">
-                          <option value="0">Seleccione</option>
-                          <?
-                          include_once 'clases/conexion.php';
 
-                              $consulta2 = "select id_repartidor, nombre_repartidor from repartidores";
-                              $resultado2 = mysqli_query( $conexion, $consulta2 ) or die ( "Algo ha ido mal en la consulta a la base de datos");
-
-                              while ($columna2 = mysqli_fetch_array( $resultado2 ))
-                            {
-                              if ($rpRegistro==$columna2['id_repartidor'])
-                              {
-                                $varfea="selected";
-
-                              }else {
-                                $varfea="";
-                              }
-                              echo '<option '.$varfea.' value="'.$columna2['id_repartidor'].'">'.$columna2['nombre_repartidor'].'</option>';
-
-                            }
-
-                          ?>
-
-                      </td>
-
-                    <td>&nbsp;</td>
-                    </tr>
                     <tr>
             <td>&nbsp;</td>
 
