@@ -10,6 +10,7 @@ $mensaje = "";
  $rut = $_POST["txtRut"];
  $dv = $_POST["txtDv"];
  $rpRegistro = $_POST["selecionRp"];
+ $varRepartidor = $_POST["SelectRepartidor"];
 
 $rutUnido=$rut."-".$dv;
 /*
@@ -71,7 +72,7 @@ validación de rut
 
 
 
-              $consulta = "INSERT INTO asistencia(nombre, rut, rp) VALUES ('".$nombre."', '".$rutUnido."', '".$rpRegistro."')";
+              $consulta = "INSERT INTO asistencia(nombre, rut, rp, repartidor) VALUES ('".$nombre."', '".$rutUnido."', '".$rpRegistro."', '".$varRepartidor."')";
               $resultado = mysqli_query( $conexion, $consulta ) or die ( "Algo ha ido mal en la consulta a la base de datos");
 
               if($resultado)
