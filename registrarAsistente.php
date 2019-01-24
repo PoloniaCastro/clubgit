@@ -81,6 +81,10 @@ $rpRegistro = $_SESSION["id2"];
                     <td>&nbsp;</td>
                     </tr>
                     <tr>
+            <td>&nbsp;</td>
+
+                    </tr>
+                    <tr>
                       <td></td>
                       <td><div>
                         <button type="submit" class="btn btn-primary btn-lg">Guardar</button>
