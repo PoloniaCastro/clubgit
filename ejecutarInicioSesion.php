@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 include_once 'clases/conexion.php';
 
 $correo = $_POST["txtCorreo"];
@@ -16,7 +16,7 @@ $resultado = mysqli_query( $conexion, $consulta1 ) or die ( "Algo ha ido mal en 
   //$resultado2 = mysqli_query( $conexion, $consulta2 ) or die ( "Algo ha ido mal en la consulta a la base de datos");
   if($fila2 = mysqli_fetch_array( $resultado ))
   {
-
+    session_start();
      $_SESSION['nombre']= $fila2['nombrerp'];
      $_SESSION['id2'] = $fila2['id'];
      $_SESSION['permisos'] = $fila2['permisos'];
