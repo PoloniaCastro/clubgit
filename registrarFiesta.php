@@ -6,11 +6,18 @@ $rpRegistro = $_SESSION["id2"];
 
 ?>
 
+
           <!-- DataTables Example -->
           <div class="card mb-3">
             <div class="card-header">
               <i class="fas fa-table"></i>
               Registro de fiestas</div>
+
+<?
+
+if ($_SESSION['permisos']==1) {
+  ?>
+
             <div class="card-body">
               <div class="table-responsive">
                 <!-- form -->
@@ -77,6 +84,15 @@ $rpRegistro = $_SESSION["id2"];
               </div>
             </div>
           <!-- <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>-->
+
+          <?
+}else{
+          ?>
+No tienes permiso para ver este contenido
+
+<?
+}
+?>
           </div>
 
         </div>
