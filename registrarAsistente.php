@@ -4,7 +4,7 @@ include_once("menu.php");
 $mensaje = "";
 $rpRegistro = 0;
 $rpRegistro = $_SESSION["id2"];
-
+$idEmpresa = $_SESSION["empresa"];
 
 ?>
 
@@ -115,7 +115,7 @@ $rpRegistro = $_SESSION["id2"];
                           <option value="0">Seleccione</option>
                           <?
                           include_once 'clases/conexion.php';
-                              $consulta2 = "SELECT id_fiesta, nombre_fiesta FROM fiestas  ";
+                              $consulta2 = "SELECT id_fiesta, nombre_fiesta FROM fiestas where id_fiesta= '".$idEmpresa."' ";
                               //$consulta2 = "select id_repartidor, nombre_repartidor from repartidores where id_rp='".$rpRegistro."' ";
                               $resultado2 = mysqli_query( $conexion, $consulta2 ) or die ( "Algo ha ido mal en la consulta a la base de datos");
 
