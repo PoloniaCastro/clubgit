@@ -22,7 +22,7 @@ if ($_SESSION) {
                           $rpapp=0;
 
              include_once("clases/conexion.php");
-             $consulta2 = "SELECT * FROM fiestas WHERE `empresa`=".$rpapp."";
+             $consulta2 = "SELECT * FROM fiestas WHERE `id_empresa`=".$_SESSION['empresa']."";
             $resultado2 = mysqli_query( $conexion, $consulta2 ) or die ( "Algo ha ido mal en la consulta a la base de datos. ".$rpapp." ");
             while ($columna2 = mysqli_fetch_array( $resultado2 )){
 

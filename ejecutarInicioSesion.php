@@ -30,6 +30,7 @@ else
      $_SESSION['nombre']= $fila2['nombrerp'];
      $_SESSION['id2'] = $fila2['id'];
      $_SESSION['permisos'] = $fila2['permisos'];
+     $_SESSION['empresa'] = $fila2['id_empresa'];
       header("location: index.php");
      //echo "hola".$_SESSION['nombre'];
 
