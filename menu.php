@@ -44,17 +44,7 @@ session_start();
 
       <!-- Navbar -->
       <ul class="navbar-nav ml-auto ml-md-0">
-        <li class="nav-item dropdown no-arrow mx-1">
-          <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-bell fa-fw"></i>
-            <span class="badge badge-danger">0</span>
-          </a>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="alertsDropdown">
-            <a class="dropdown-item" href="#">Nada aun</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Nada aun</a>
-          </div>
-        </li>
+
         <li class="nav-item dropdown no-arrow mx-1">
           <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-envelope fa-fw"></i>
@@ -146,12 +136,28 @@ if (!$_SESSION) {
             <h6 class="dropdown-header">Repartidores</h6>
             <a class="dropdown-item" href="registrarRepartidores.php">Registrar</a>
             <a class="dropdown-item" href="listarRepartidores.php">Listar Repartidores</a>
+           
+<?
+
+if ($_SESSION['permisos']==1) {
+  ?>
             <div class="dropdown-divider"></div>
             <h6 class="dropdown-header">Fiestas</h6>
             <a class="dropdown-item" href="registrarFiesta.php">Registrar Fiesta</a>
             <a class="dropdown-item" href="index.php">Listar Fiestas</a>
           </div>
         </li>
+
+<?
+}
+?>
+
+
+<?
+
+}
+?>
+
         <li class="nav-item">
           <a class="nav-link" href="listar.php">
             <i class="fas fa-fw fa-chart-area"></i>
@@ -163,11 +169,6 @@ if (!$_SESSION) {
             <span>Eliminar</span></a>
         </li>
       </ul>
-
-<?
-}
-?>
-
       <div id="content-wrapper">
 
         <div class="container-fluid">
