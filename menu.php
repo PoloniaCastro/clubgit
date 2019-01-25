@@ -162,17 +162,9 @@ if ($_SESSION['permisos']==1) {
                       <h6 class="dropdown-header">Repartidores</h6>
                       <a class="dropdown-item" href="listarRepartidores.php">Listar repartidores</a>
                       <h6 class="dropdown-header">RP</h6>
-
-                      <a class="dropdown-item" href="listarRp.php">Listar rp</a>
-
-
-
-                      <a class="dropdown-item" href="listarRp.php">Listar rp</a>
-
-
                       <a class="dropdown-item" href="listarRepartidores.php">Listar rp</a>
                       <h6 class="dropdown-header">Fiesta</h6>
-                      <a class="dropdown-item" href="listarRepartidores.php">Listar Fiesta</a>
+                      <a class="dropdown-item" href="index.php">Listar Fiesta</a>
 
 
                   </li>
@@ -181,7 +173,19 @@ if ($_SESSION['permisos']==1) {
         <li class="nav-item">
           <a class="nav-link" href="#">
             <i class="fas fa-fw fa-table"></i>
-            <span>Eliminar</span></a>
+            <span>Editar</span></a>
+        </li>
+
+                <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Modificar Empresa</span></a>
+        </li>
+
+                <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Centro de documentos</span></a>
         </li>
       </ul>
 
