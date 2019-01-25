@@ -115,13 +115,13 @@ $idEmpresa = $_SESSION["empresa"];
                           <option value="0">Seleccione</option>
                           <?
                           include_once 'clases/conexion.php';
-                              $consulta2 = "SELECT id_fiesta, nombre_fiesta FROM fiestas where id_fiesta= '".$idEmpresa."' ";
+                              $consulta2 = "SELECT id_fiesta, nombre_fiesta FROM fiestas where id_empresa= '".$idEmpresa."' ";
                               //$consulta2 = "select id_repartidor, nombre_repartidor from repartidores where id_rp='".$rpRegistro."' ";
                               $resultado2 = mysqli_query( $conexion, $consulta2 ) or die ( "Algo ha ido mal en la consulta a la base de datos");
 
                               while ($columna2 = mysqli_fetch_array( $resultado2 ))
                             {
-                              if ($rpRegistro==$columna2['id_fiesta'])
+                              if ($idEmpresa==$columna2['id_fiesta'])
                               {
                                 $varfea="selected";
 
