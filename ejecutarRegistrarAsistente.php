@@ -1,7 +1,7 @@
 <?php
 include_once 'clases/servicio.php';
 include_once 'clases/conexion.php';
-
+include_once("menu.php");
 $mensaje = "";
 
   //captura de Datos
@@ -12,6 +12,7 @@ $mensaje = "";
  $rpRegistro = $_POST["selecionRp"];
  $varRepartidor = $_POST["SelectRepartidor"];
  $varFiesta = $_POST["SelectFiesta"];
+ $idEmpresa = $_SESSION["empresa"];
 
 $rutUnido=$rut."-".$dv;
 /*
@@ -61,7 +62,7 @@ validación de rut
 
   if($dv==$digito)
   {
-    $consulta1 = "SELECT count(*) FROM asistencia WHERE rut = '$rutUnido '";
+    $consulta1 = "SELECT count(*) FROM asistencia WHERE rut = '$rutUnido' and fiesta='$varFiesta' ";
     $resultado = mysqli_query( $conexion, $consulta1 ) or die ( "Algo ha ido mal en la consulta a la base de datos");
     $fila = mysqli_fetch_array($resultado);
 
