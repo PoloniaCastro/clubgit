@@ -1,64 +1,78 @@
-<?
+<!DOCTYPE html>
+<?php
 include_once("menu.php");
+$rpRegistro = 0;
+$rpRegistro = $_SESSION["id2"];
+
 ?>
 
           <!-- DataTables Example -->
           <div class="card mb-3">
             <div class="card-header">
               <i class="fas fa-table"></i>
-              Lista de repartidores</div>
+              Registro de fiestas</div>
             <div class="card-body">
               <div class="table-responsive">
                 <!-- form -->
-                <form class="form" method="GET" action="ejecutarEliminarListaRepartidores.php">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
+                <form class="form" method="POST" action="ejecutarRegistrarFiesta.php">
+                  <table  style="margin: 0 auto;">
                     <tr>
-                      <th>Nombre</th>
+            <td>&nbsp;</td>
 
-                      <th>RP</th>
+                    </tr>
+                    <tr>
+                      <td>Nombre de fiesta</td>
+                      <td><input type="text" class="form-control" name="txtNombreFiesta" placeholder="Nombre"/></td>
+                    <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+            <td>&nbsp;</td>
+
+                    </tr>
+                    <tr>
+                      <td>Lugar</td>
+                      <td><input type="text" style="width:300px;height:30px" class="form-control form-control- " name="txtLugar" placeholder="Ej: Viña del Mar"/></td>
+                      </th>
+                    </tr>
+                    <tr>
+            <td>&nbsp;</td>
+
+                    </tr>
+                    <tr>
+                      <td>Fecha</td>
+                      <td><input type="text" style="width:300px;height:30px" class="form-control form-control- " name="txtFecha" placeholder="AAAA-MM-DD"/></td>
+                      </th>
+                    </tr>
+                    <tr>
+            <td>&nbsp;</td>
+
+                    </tr>
+                    <tr>
+                      <td>Hora</td>
+                      <td><input type="text" style="width:300px;height:30px" class="form-control form-control- " name="txtHora" placeholder="HH:MM"/></td>
+                      </th>
+                    </tr>
+                    <tr>
+            <td>&nbsp;</td>
+
+                    </tr>
+                    <tr>
+                      <td>Empresa</td>
+                      <td><input type="text" style="width:300px;height:30px" class="form-control form-control- " name="txtEmpresa" placeholder="Empresa"/></td>
+                      </th>
+                    </tr>
+                    <tr>
+            <td>&nbsp;</td>
+
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td><div>
+                        <button type="submit" class="btn btn-primary btn-lg">Guardar</button>
+                      </div></td>
                       <th></th>
                     </tr>
-                  </thead>
-                  <tfoot>
-                    <tr>
-                      <th>Nombre</th>
-
-                      <th>RP</th>
-                      <th></th>
-                    </tr>
-                  </tfoot>
-                  <tbody>
-                    <?php
-                    include_once("clases/conexion.php");
-
-                    	$rpapp = $_SESSION['id2'];
-
-                      $consulta1= "SELECT * FROM repartidores
-                      inner join rp on rp.id = repartidores.id_rp where id_rp = ".$rpapp."
-                      ORDER by id_rp DESC";
-                      $resultado1 = mysqli_query( $conexion, $consulta1 ) or die ( "Algo ha ido mal en la consulta a la base de datos.");
-
-
-                    	while ($columna = mysqli_fetch_array( $resultado1 ))
-                    	{
-
-
-                    	  echo "<tr><td>".utf8_encode($columna['nombre_repartidor'])."</td><td>".utf8_encode($columna['nombrerp'])."</td>
-
-                        <td><a type='submit'style='color:black;' class='btn btn-primary btn-lg' href='ejecutarEliminarListaRepartidores.php?id_repartidor=".$columna['id_repartidor']." &id_rp=".$rpapp."'>Eliminar</a></td></tr>  ";
-
-                    	}
-
-
-
-
-
-
-                    	mysqli_close( $conexion );
-                        ?>
-                  </tbody>
-                </table>
+                  </table>
                 </form>
               </div>
             </div>

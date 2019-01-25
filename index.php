@@ -1,17 +1,18 @@
-
 <?
 include_once("menu.php");
 ?>
 
-  
+
           <!-- Area Chart Example-->
+          <form class="form" method="GET" action="ejecutarEliminarFiesta.php">
+
           <div class="card mb-3">
             <div class="card-header">
               <i class="fas fa-chart-area"></i>
               Fiestas</div>
             <div class="card-body">
               <div class="row">
-             
+
              <!-- Bucle de fiestas-->
 <?
 if ($_SESSION) {
@@ -19,6 +20,7 @@ if ($_SESSION) {
             if ($_SESSION['permisos']==1) {
 
                           $rpapp=0;
+
              include_once("clases/conexion.php");
              $consulta2 = "SELECT * FROM fiestas WHERE `empresa`=".$rpapp."";
             $resultado2 = mysqli_query( $conexion, $consulta2 ) or die ( "Algo ha ido mal en la consulta a la base de datos. ".$rpapp." ");
@@ -33,21 +35,26 @@ if ($_SESSION) {
                       <i class="fas fa-fw fa-life-ring"></i>
                     </div>
                     <div class="mr-5"><? echo $columna2['nombre_fiesta']; ?></div>
-                    <div class="mr-5"><? echo  utf8_encode($columna2['lugar_fiesta']); ?></div>
-                    <div class="mr-5"><? echo $columna2['horario_fiesta']; ?></div>
-                  </div>
-                  <a class="card-footer text-white clearfix small z-1" href="#">
-                    <span class="float-left">Ver Detalles</span>
+                    <div class="mr-5">Lugar:<? echo  utf8_encode($columna2['lugar_fiesta']); ?></div>
+                    <div class="mr-5">Fecha:<? echo  utf8_encode($columna2['fecha_fiesta']); ?></div>
+                    <div class="mr-5">Hora:<? echo  utf8_encode($columna2['hora_fiesta']); ?></div>
+
+                    </div>
+                  <a class="card-footer text-white clearfix small z-1" href="ejecutarEliminarFiesta.php">
+                    <span class="float-left">Eliminar</span>
+                    <? echo "<a type='submit'style='color:black;'  class='btn btn-primary btn-lg' href='ejecutarEliminarFiesta.php?id_fiesta=".$columna2['id_fiesta']." '>Eliminar</a>";
+                    ?>
                     <span class="float-right">
                       <i class="fas fa-angle-right"></i>
                     </span>
+
                   </a>
                 </div>
               </div>
 <?
  }
 
-              
+
             }else{
 echo "Bienvenido RP, para ingresar gente revise su menú lateral";
 
@@ -62,9 +69,9 @@ echo "Bienvenido RP, para ingresar gente revise su menú lateral";
 </div>
 
             </div>
-           
-          </div>
 
+          </div>
+        </form>
 
 
         </div>

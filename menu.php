@@ -146,6 +146,10 @@ if (!$_SESSION) {
             <h6 class="dropdown-header">Repartidores</h6>
             <a class="dropdown-item" href="registrarRepartidores.php">Registrar</a>
             <a class="dropdown-item" href="listarRepartidores.php">Listar Repartidores</a>
+            <div class="dropdown-divider"></div>
+            <h6 class="dropdown-header">Fiestas</h6>
+            <a class="dropdown-item" href="registrarFiesta.php">Registrar Fiesta</a>
+            <a class="dropdown-item" href="index.php">Listar Fiestas</a>
           </div>
         </li>
         <li class="nav-item">
