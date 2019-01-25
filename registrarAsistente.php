@@ -42,29 +42,25 @@ $idEmpresa = $_SESSION["empresa"];
             <td>&nbsp;</td>
 
                     </tr>
+                    
                     <tr>
                       <td>RP</td>
-                      <td><select name="selecionRp">
-                        <option value="0">Seleccione</option>
+                      <td>
                         <?
                         include_once 'clases/conexion.php';
 
                           //  $db = mysqli_select_db( $conexion, $basededatos ) or die ( "Upps! Pues va a ser que no se ha podido conectar a la base de datos" );
                            // establecer y realizar consulta. guardamos en variable.
-                            $consulta = "select id, nombrerp from rp";
+                            $consulta = "select id, nombrerp from rp where id='".$_SESSION["id2"]."'";
                             $resultado = mysqli_query( $conexion, $consulta ) or die ( "Algo ha ido mal en la consulta a la base de datos");
 
                             while ($columna = mysqli_fetch_array( $resultado ))
                           {
-                            if ($rpRegistro==$columna['id'])
-                            {
-                              $varfea="selected";
-
-                            }else {
-                              $varfea="";
-                            }
-                            echo '<option '.$varfea.' value="'.$columna['id'].'">'.$columna['nombrerp'].'</option>';
-
+                            ?>
+                           <h3> <?=$columna["nombrerp"];?> </h3>
+<input readonly type="hidden" class="form-control" name="selecionRp" placeholder="<?=$columna["nombrerp"];?>" value="<?=$_SESSION["id2"];?>"/>
+                            
+<?
                           }
 
 
@@ -72,6 +68,7 @@ $idEmpresa = $_SESSION["empresa"];
             </td>
                       <th></th>
                     </tr>
+                    
                     <tr>
             <td>&nbsp;</td>
 
