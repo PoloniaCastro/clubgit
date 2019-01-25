@@ -157,20 +157,27 @@ if ($_SESSION['permisos']==1) {
                       <span>Listar</span>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                      <h6 class="dropdown-header">Fiestas</h6>
+                      <h6 class="dropdown-header">Asistentes</h6>
                       <a class="dropdown-item" href="listar.php">Listar asistentes</a>
                       <h6 class="dropdown-header">Repartidores</h6>
                       <a class="dropdown-item" href="listarRepartidores.php">Listar repartidores</a>
                       <h6 class="dropdown-header">RP</h6>
                       <a class="dropdown-item" href="listarRepartidores.php">Listar rp</a>
-
+                      <h6 class="dropdown-header">Fiesta</h6>
+                      <a class="dropdown-item" href="listarRepartidores.php">Listar Fiesta</a>
                   </li>
 
 
         <li class="nav-item">
           <a class="nav-link" href="#">
             <i class="fas fa-fw fa-table"></i>
-            <span>Eliminar</span></a>
+            <span>Editar</span></a>
+        </li>
+
+                <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Configurar Empresa</span></a>
         </li>
       </ul>
 
@@ -184,7 +191,7 @@ if ($_SESSION['permisos']==1) {
       <div id="content-wrapper">
 
         <div class="container-fluid">
-
+<img class="img-fluid center-block" src="img/club.png">
           <!-- Breadcrumbs-->
           <ol class="breadcrumb">
             <li class="breadcrumb-item">
