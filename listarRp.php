@@ -10,21 +10,17 @@ include_once("menu.php");
             <div class="card-body">
               <div class="table-responsive">
                 <!-- form -->
-                <form class="form" method="GET" action=".php">
+                <form class="form" method="GET" action="ejecutarEliminarListaRp.php">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
                       <th>Nombre</th>
-
-                      <th>Empresa</th>
                       <th></th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
                       <th>Nombre</th>
-
-                      <th>Empresa</th>
                       <th></th>
                     </tr>
                   </tfoot>
@@ -32,11 +28,10 @@ include_once("menu.php");
                     <?php
                     include_once("clases/conexion.php");
 
-                    	$rpapp = $_SESSION['id2'];
+                    	//$rpapp = $_SESSION['id2'];
 
-                      $consulta1= "SELECT * FROM repartidores
-                      inner join rp on rp.id = repartidores.id_rp where id_rp = ".$rpapp."
-                      ORDER by id_rp DESC";
+                      $consulta1= "SELECT * FROM rp";
+
                       $resultado1 = mysqli_query( $conexion, $consulta1 ) or die ( "Algo ha ido mal en la consulta a la base de datos.");
 
 
@@ -44,9 +39,9 @@ include_once("menu.php");
                     	{
 
 
-                    	  echo "<tr><td>".utf8_encode($columna['nombre_repartidor'])."</td><td>".utf8_encode($columna['nombrerp'])."</td>
+                    	  echo "<tr><td>".utf8_encode($columna['nombrerp'])."</td>
 
-                        <td><a type='submit'style='color:black;' class='btn btn-primary btn-lg' href='ejecutarEliminarListaRepartidores.php?id_repartidor=".$columna['id_repartidor']." &id_rp=".$rpapp."'>Eliminar</a></td></tr>  ";
+                        <td><a type='submit'style='color:black;' class='btn btn-primary btn-lg' href='ejecutarEliminarListaRp.php?id=".$columna['id']." '>Eliminar</a></td></tr>  ";
 
                     	}
 

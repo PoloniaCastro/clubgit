@@ -135,7 +135,7 @@ if (!$_SESSION) {
             <div class="dropdown-divider"></div>
             <h6 class="dropdown-header">Repartidores</h6>
             <a class="dropdown-item" href="registrarRepartidores.php">Registrar</a>
-            <a class="dropdown-item" href="listarRepartidores.php">Listar Repartidores</a>
+
 
 <?
 
@@ -162,7 +162,7 @@ if ($_SESSION['permisos']==1) {
                       <h6 class="dropdown-header">Repartidores</h6>
                       <a class="dropdown-item" href="listarRepartidores.php">Listar repartidores</a>
                       <h6 class="dropdown-header">RP</h6>
-                      <a class="dropdown-item" href="listarRepartidores.php">Listar rp</a>
+                      <a class="dropdown-item" href="listarRp.php">Listar rp</a>
 
                   </li>
 
