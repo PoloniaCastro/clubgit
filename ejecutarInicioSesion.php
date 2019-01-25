@@ -24,9 +24,6 @@ else
   while ($fila2 = mysqli_fetch_array( $resultado2 ))
   {
 
-
-    //echo "hola ".$_SESSION['correo'];
-    //echo "hola";
      $_SESSION['nombre']= $fila2['nombrerp'];
      $_SESSION['id2'] = $fila2['id'];
      $_SESSION['permisos'] = $fila2['permisos'];
@@ -39,20 +36,6 @@ else
     echo "Contraseña incorrecta";
   }
 }
-
-
-
-
-
-
-
-
-
-//session_start();
-//$_SESSION["rp"] = $correo;
-//header("location: login.php");
-//**
-
 
 
 

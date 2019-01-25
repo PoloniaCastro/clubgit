@@ -5,6 +5,7 @@ $mensaje = "";
 $rpRegistro = 0;
 $rpRegistro = $_SESSION["id2"];
 
+
 ?>
 
           <!-- DataTables Example -->
@@ -104,6 +105,40 @@ $rpRegistro = $_SESSION["id2"];
 
                     <td>&nbsp;</td>
                     </tr>
+                    <tr>
+            <td>&nbsp;</td>
+
+                    </tr>
+                    <tr>
+                      <td>Fiesta</td>
+                      <td><select name="SelectFiesta">
+                          <option value="0">Seleccione</option>
+                          <?
+                          include_once 'clases/conexion.php';
+                              $consulta2 = "SELECT id_fiesta, nombre_fiesta FROM fiestas  ";
+                              //$consulta2 = "select id_repartidor, nombre_repartidor from repartidores where id_rp='".$rpRegistro."' ";
+                              $resultado2 = mysqli_query( $conexion, $consulta2 ) or die ( "Algo ha ido mal en la consulta a la base de datos");
+
+                              while ($columna2 = mysqli_fetch_array( $resultado2 ))
+                            {
+                              if ($rpRegistro==$columna2['id_fiesta'])
+                              {
+                                $varfea="selected";
+
+                              }else {
+                                $varfea="";
+                              }
+                              echo '<option '.$varfea.' value="'.$columna2['id_fiesta'].'">'.$columna2['nombre_fiesta'].'</option>';
+
+                            }
+
+                          ?>
+
+                      </td>
+
+                    <td>&nbsp;</td>
+                    </tr>
+
                     <tr>
             <td>&nbsp;</td>
 
