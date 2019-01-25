@@ -24,7 +24,7 @@ $idEmpresa = $_SESSION["empresa"];
                     </tr>
                     <tr>
                       <td>Nombre</td>
-                      <td><input type="text" class="form-control" name="txtNombre" placeholder="Nombre"/></td>
+                      <td><input type="text" class="form-control" name="txtNombre" required  placeholder="Nombre"/></td>
                     <td>&nbsp;</td>
                     </tr>
                     <tr>
@@ -33,9 +33,9 @@ $idEmpresa = $_SESSION["empresa"];
                     </tr>
                     <tr>
                       <td>Rut</td>
-                      <td><input type="text" style="width:300px;height:30px" class="form-control form-control- " name="txtRut" placeholder="Rut sin puntos (k minúscula) ->"/></td>
+                      <td><input type="text" style="width:300px;height:30px" class="form-control form-control- " name="txtRut" required  placeholder="Rut sin puntos (k minúscula) ->"/></td>
                       <td>-</td>
-                      <th><input type="text" style="width:80px;height:30px" class="form-control form-control-xs " name="txtDv" placeholder="dv"/>
+                      <th><input type="text" style="width:80px;height:30px" class="form-control form-control-xs " name="txtDv" required placeholder="dv"/>
                     </th>
                     </tr>
                     <tr>
