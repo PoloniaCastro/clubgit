@@ -58,9 +58,34 @@ $rpRegistro = $_SESSION["id2"];
                     </tr>
                     <tr>
                       <td>Empresa</td>
-                      <td><input type="text" style="width:300px;height:30px" class="form-control form-control- " name="txtEmpresa" placeholder="Empresa"/></td>
-                      </th>
+                      <td><select name="SelectEmpresa">
+                          <option value="0">Seleccione</option>
+                          <?
+                          include_once 'clases/conexion.php';
+                              $consulta2 = "SELECT id_empresas, nombre_empresas FROM empresas ";
+                              //$consulta2 = "select id_repartidor, nombre_repartidor from repartidores where id_rp='".$rpRegistro."' ";
+                              $resultado2 = mysqli_query( $conexion, $consulta2 ) or die ( "Algo ha ido mal en la consulta a la base de datos");
+
+                              while ($columna2 = mysqli_fetch_array( $resultado2 ))
+                            {
+                              if ($rpRegistro==$columna2['id_empresas'])
+                              {
+                                $varfea="selected";
+
+                              }else {
+                                $varfea="";
+                              }
+                              echo '<option '.$varfea.' value="'.$columna2['id_empresas'].'">'.$columna2['nombre_empresas'].'</option>';
+
+                            }
+
+                          ?>
+
+                      </td>
+
+                    <td>&nbsp;</td>
                     </tr>
+
                     <tr>
             <td>&nbsp;</td>
 
