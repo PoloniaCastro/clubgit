@@ -136,7 +136,7 @@ if (!$_SESSION) {
             <h6 class="dropdown-header">Repartidores</h6>
             <a class="dropdown-item" href="registrarRepartidores.php">Registrar</a>
             <a class="dropdown-item" href="listarRepartidores.php">Listar Repartidores</a>
-           
+
 <?
 
 if ($_SESSION['permisos']==1) {
@@ -151,14 +151,22 @@ if ($_SESSION['permisos']==1) {
 <?
 }
 ?>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fas fa-fw fa-folder"></i>
+                      <span>Listar</span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+                      <h6 class="dropdown-header">Fiestas</h6>
+                      <a class="dropdown-item" href="listar.php">Listar asistentes</a>
+                      <h6 class="dropdown-header">Repartidores</h6>
+                      <a class="dropdown-item" href="listarRepartidores.php">Listar repartidores</a>
+                      <h6 class="dropdown-header">RP</h6>
+                      <a class="dropdown-item" href="listarRepartidores.php">Listar rp</a>
+
+                  </li>
 
 
-
-        <li class="nav-item">
-          <a class="nav-link" href="listar.php">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Listar</span></a>
-        </li>
         <li class="nav-item">
           <a class="nav-link" href="#">
             <i class="fas fa-fw fa-table"></i>
