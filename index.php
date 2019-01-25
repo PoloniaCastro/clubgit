@@ -25,6 +25,7 @@ if ($_SESSION) {
              $consulta2 = "SELECT * FROM fiestas WHERE `id_empresa`=".$_SESSION['empresa']."";
             $resultado2 = mysqli_query( $conexion, $consulta2 ) or die ( "Algo ha ido mal en la consulta a la base de datos. ".$rpapp." ");
             while ($columna2 = mysqli_fetch_array( $resultado2 )){
+              $timestamp = strtotime($columna2['hora_fiesta']);
 
 
 ?>
@@ -37,15 +38,16 @@ if ($_SESSION) {
                     <div class="mr-5"><? echo $columna2['nombre_fiesta']; ?></div>
                     <div class="mr-5">Lugar:<? echo  utf8_encode($columna2['lugar_fiesta']); ?></div>
                     <div class="mr-5">Fecha:<? echo  utf8_encode($columna2['fecha_fiesta']); ?></div>
-                    <div class="mr-5">Hora:<? echo  utf8_encode($columna2['hora_fiesta']); ?></div>
+                    <div class="mr-5">Hora:<? echo  $timestamp ; ?></div>
+                    <? echo  utf8_encode($columna2['id_fiesta']); ?>
 
                     </div>
-                  <a class="card-footer text-white clearfix small z-1" href="ejecutarEliminarFiesta.php">
-                    <span class="float-left">Eliminar</span>
-                    <? echo "<a type='submit'style='color:black;'  class='btn btn-primary btn-lg' href='ejecutarEliminarFiesta.php?id_fiesta=".$columna2['id_fiesta']." '>Eliminar</a>";
-                    ?>
+                  <a class="card-footer text-white clearfix small z-1" href="#">
+                    
+                    <a type="submit" style="color:black;"  class="btn btn-primary btn-lg" href="ejecutarEliminarFiesta.php?id_fiesta=<? echo  utf8_encode($columna2['id_fiesta']); ?>"> Eliminar</a>
+                   
                     <span class="float-right">
-                      <i class="fas fa-angle-right"></i>
+                      
                     </span>
 
                   </a>
