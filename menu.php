@@ -162,10 +162,10 @@ if ($_SESSION['permisos']==1) {
                       <h6 class="dropdown-header">Repartidores</h6>
                       <a class="dropdown-item" href="listarRepartidores.php">Listar repartidores</a>
                       <h6 class="dropdown-header">RP</h6>
-<<<<<<< HEAD
+
                       <a class="dropdown-item" href="listarRp.php">Listar rp</a>
 
-=======
+
 
                       <a class="dropdown-item" href="listarRp.php">Listar rp</a>
 
@@ -174,7 +174,7 @@ if ($_SESSION['permisos']==1) {
                       <h6 class="dropdown-header">Fiesta</h6>
                       <a class="dropdown-item" href="listarRepartidores.php">Listar Fiesta</a>
 
->>>>>>> 23fff13ef4991674b5413a48a852e22dea8c3d08
+
                   </li>
 
 
@@ -195,7 +195,7 @@ if ($_SESSION['permisos']==1) {
       <div id="content-wrapper">
 
         <div class="container-fluid">
-
+<img class="img-fluid" src="img/club.png">
           <!-- Breadcrumbs-->
           <ol class="breadcrumb">
             <li class="breadcrumb-item">
