@@ -162,14 +162,14 @@ if ($_SESSION['permisos']==1) {
                       <h6 class="dropdown-header">Repartidores</h6>
                       <a class="dropdown-item" href="listarRepartidores.php">Listar repartidores</a>
                       <h6 class="dropdown-header">RP</h6>
-<<<<<<< HEAD
+
                       <a class="dropdown-item" href="listarRp.php">Listar rp</a>
 
-=======
+
                       <a class="dropdown-item" href="listarRepartidores.php">Listar rp</a>
                       <h6 class="dropdown-header">Fiesta</h6>
                       <a class="dropdown-item" href="listarRepartidores.php">Listar Fiesta</a>
->>>>>>> 86b1de68627327e6b57cf41773c72c445654a13a
+
                   </li>
 
 
