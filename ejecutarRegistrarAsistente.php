@@ -15,6 +15,9 @@ $mensaje = "";
  $idEmpresa = $_SESSION["empresa"];
 
 $rutUnido=$rut."-".$dv;
+
+
+
 /*
 validación de rut
 */

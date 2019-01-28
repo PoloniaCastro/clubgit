@@ -36,7 +36,13 @@ $idEmpresa = $_SESSION["empresa"];
 
                             }
 
+
+
+
+
                           ?>
+
+
 
                       </td>
 
@@ -46,6 +52,7 @@ $idEmpresa = $_SESSION["empresa"];
                     <tr>
                       <td></td>
                       <td><button type="submit" class="btn btn-primary btn-lg">Listar</button></td>
+
                     </tr>
                   </table>
                 </form>

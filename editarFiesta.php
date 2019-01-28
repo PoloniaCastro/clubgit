@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <?php
 include_once("menu.php");
+include_once 'clases/conexion.php';
 $rpRegistro = 0;
 $rpRegistro = $_SESSION["id2"];
+$idFiesta = $_GET["id_fiesta"];
 
 ?>
 
@@ -11,17 +13,20 @@ $rpRegistro = $_SESSION["id2"];
           <div class="card mb-3">
             <div class="card-header">
               <i class="fas fa-table"></i>
-              Registro de fiestas</div>
+               Modificación de Registro de fiestas</div>
 
 <?
 
 if ($_SESSION['permisos']==1) {
+  $consulta = "SELECT * FROM fiestas WHERE id_fiesta='".$idFiesta."'";
+  $resultado = mysqli_query( $conexion, $consulta ) or die ( "Algo ha ido mal en la consulta a la base de datos");
+  while ($columna = mysqli_fetch_array( $resultado )) {
   ?>
 
             <div class="card-body">
               <div class="table-responsive">
                 <!-- form -->
-                <form class="form" method="POST" action="ejecutarRegistrarFiesta.php">
+                <form class="form" method="POST" action="ejecutarEditarFiesta.php">
                   <table  style="margin: 0 auto;">
                     <tr>
             <td>&nbsp;</td>
@@ -29,7 +34,7 @@ if ($_SESSION['permisos']==1) {
                     </tr>
                     <tr>
                       <td>Nombre de fiesta</td>
-                      <td><input type="text" class="form-control" name="txtNombreFiesta" placeholder="Nombre"/></td>
+                      <td><input type="text" class="form-control" name="txtNombreFiesta" placeholder="Nombre" value="<? echo $columna['nombre_fiesta']; ?>"/></td>
                     <td>&nbsp;</td>
                     </tr>
                     <tr>
@@ -38,16 +43,16 @@ if ($_SESSION['permisos']==1) {
                     </tr>
                     <tr>
                       <td>Lugar</td>
-                      <td><input type="text" style="width:300px;height:30px" class="form-control form-control- " name="txtLugar" placeholder="Ej: Viña del Mar"/></td>
+                      <td><input type="text" style="width:300px;height:30px" class="form-control form-control- " name="txtLugar" placeholder="Ej: Viña del Mar" value="<? echo $columna['lugar_fiesta']; ?>"/></td>
                       </th>
                     </tr>
                     <tr>
             <td>&nbsp;</td>
-
+<input type="hidden" name="id_fiesta" value="<?=$idFiesta?>"
                     </tr>
                     <tr>
                       <td>Fecha</td>
-                      <td><input type="text" style="width:300px;height:30px" class="form-control form-control- " name="txtFecha" placeholder="AAAA-MM-DD"/></td>
+                      <td><input type="text" style="width:300px;height:30px" class="form-control form-control- " name="txtFecha" placeholder="AAAA-MM-DD" value="<? echo $columna['fecha_fiesta']; ?>"/></td>
                       </th>
                     </tr>
                     <tr>
@@ -56,7 +61,7 @@ if ($_SESSION['permisos']==1) {
                     </tr>
                     <tr>
                       <td>Hora</td>
-                      <td><input type="text" style="width:300px;height:30px" class="form-control form-control- " name="txtHora" placeholder="HH:MM"/></td>
+                      <td><input type="text" style="width:300px;height:30px" class="form-control form-control- " name="txtHora" placeholder="HH:MM" value="<? echo $columna['hora_fiesta']; ?>"/></td>
                       </th>
                     </tr>
                     <tr>
@@ -111,7 +116,7 @@ if ($_SESSION['permisos']==1) {
             </div>
           <!-- <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>-->
 
-          <?
+          <?}
 }else{
           ?>
 No tienes permiso para ver este contenido

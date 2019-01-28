@@ -42,7 +42,9 @@ $idEmpresa = $_SESSION["empresa"];
             <td>&nbsp;</td>
 
                     </tr>
-                    
+
+
+
                     <tr>
                       <td>RP</td>
                       <td>
@@ -59,7 +61,7 @@ $idEmpresa = $_SESSION["empresa"];
                             ?>
                            <h3> <?=$columna["nombrerp"];?> </h3>
 <input readonly type="hidden" class="form-control" name="selecionRp" placeholder="<?=$columna["nombrerp"];?>" value="<?=$_SESSION["id2"];?>"/>
-                            
+
 <?
                           }
 
@@ -68,11 +70,12 @@ $idEmpresa = $_SESSION["empresa"];
             </td>
                       <th></th>
                     </tr>
-                    
+
                     <tr>
             <td>&nbsp;</td>
 
                     </tr>
+
                     <tr>
                       <td>Repartidor</td>
                       <td><select name="SelectRepartidor">

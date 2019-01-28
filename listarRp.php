@@ -41,7 +41,7 @@ include_once("menu.php");
 
                     	  echo "<tr><td>".utf8_encode($columna['nombrerp'])."</td>
 
-                        <td><a type='submit'style='color:black;' class='btn btn-primary btn-lg' href='ejecutarEliminarListaRp.php?id=".$columna['id']." '>Eliminar</a></td></tr>  ";
+                        <td><a OnClick='confirmar(event)' type='submit'style='color:black;' class='btn btn-primary btn-lg' href='ejecutarEliminarListaRp.php?id=".$columna['id']." '>Eliminar</a></td></tr>  ";
 
                     	}
 
@@ -121,6 +121,8 @@ include_once("menu.php");
     <script src="js/demo/datatables-demo.js"></script>
     <script src="js/demo/chart-area-demo.js"></script>
 
+
+        <script src="confirmacion.js"></script>
   </body>
 
 </html>

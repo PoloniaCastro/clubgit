@@ -39,19 +39,22 @@ if ($_SESSION) {
                     <div class="mr-5">Lugar:<? echo  utf8_encode($columna2['lugar_fiesta']); ?></div>
                     <div class="mr-5">Fecha:<? echo  date('j/m/Y',strtotime($columna2['fecha_fiesta'])); ?></div>
                     <div class="mr-5">Hora:<? echo  date('H:i',$timestamp) ; ?></div>
-                   
+
 
                     </div>
                   <a class="card-footer text-white clearfix small z-1" href="#">
-                    
-                    <a type="submit" style="color:black;"  class="btn btn-primary btn-lg" href="ejecutarEliminarFiesta.php?id_fiesta=<? echo  utf8_encode($columna2['id_fiesta']); ?>"> Eliminar</a>
-                   
+
+                    <a OnClick='confirmar(event)' type="submit" style="color:black;"  class="btn btn-primary btn-lg" href="ejecutarEliminarFiesta.php?id_fiesta=<? echo  utf8_encode($columna2['id_fiesta']); ?>"> Eliminar</a>
+                    <a  type="submit" style="color:black;"  class="btn btn-primary btn-lg" href="editarFiesta.php?id_fiesta=<? echo  utf8_encode($columna2['id_fiesta']); ?>"> Editar</a>
+
                     <span class="float-right">
-                      
+
                     </span>
 
                   </a>
+
                 </div>
+
               </div>
 <?
  }
@@ -119,7 +122,7 @@ echo "Bienvenido RP, para ingresar gente revise su menú lateral";
     <!-- Demo scripts for this page-->
     <script src="js/demo/datatables-demo.js"></script>
     <script src="js/demo/chart-area-demo.js"></script>
-
+      <script src="confirmacion.js"></script>
   </body>
 
 </html>

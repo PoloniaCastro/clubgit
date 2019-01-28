@@ -75,11 +75,13 @@ $idFiesta= $_GET["SelectFiesta"];
 
                     	while ($columna = mysqli_fetch_array( $resultado ))
                     	{
+
+
                     	  $rutsql =  $columna['rut'];
 
                     	  echo "<tr><td>".utf8_encode($columna['nombre'])."</td><td>".utf8_encode($columna['apellido'])."</td><td>".$columna['nombrerp']."</td><td>".$columna['nombre_repartidor']."</td><td>".$columna['nombre_fiesta']."</td><td>".$columna['estate']."</td>
 
-                        <td><a type='submit'style='color:black;' class='btn btn-primary btn-lg' href='ejecutarEliminarLista.php?id_asistencia=".$columna['id_asistencia']."&id_rp=".$rpapp." '>Eliminar</a></td></tr>  ";
+                        <td><a OnClick='confirmar(event)'  type='submit'style='color:black;' class='btn btn-primary btn-lg' href='ejecutarEliminarLista.php?id_asistencia=".$columna['id_asistencia']."&id_rp=".$rpapp." '>Eliminar</a></td></tr>  ";
 
                     	}
 
@@ -89,7 +91,9 @@ $idFiesta= $_GET["SelectFiesta"];
 
 
                     	mysqli_close( $conexion );
+
                         ?>
+
                   </tbody>
                 </table>
 
@@ -159,6 +163,10 @@ $idFiesta= $_GET["SelectFiesta"];
     <!-- Demo scripts for this page-->
     <script src="js/demo/datatables-demo.js"></script>
     <script src="js/demo/chart-area-demo.js"></script>
+
+
+    <script src="confirmacion.js"></script>
+
 
   </body>
 
