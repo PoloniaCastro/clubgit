@@ -81,7 +81,8 @@ $idFiesta= $_GET["SelectFiesta"];
 
                     	  echo "<tr><td>".utf8_encode($columna['nombre'])."</td><td>".utf8_encode($columna['apellido'])."</td><td>".$columna['nombrerp']."</td><td>".$columna['nombre_repartidor']."</td><td>".$columna['nombre_fiesta']."</td><td>".$columna['estate']."</td>
 
-                        <td><a OnClick='confirmar(event)'  type='submit'style='color:black;' class='btn btn-primary btn-lg' href='ejecutarEliminarLista.php?id_asistencia=".$columna['id_asistencia']."&id_rp=".$rpapp." '>Eliminar</a></td></tr>  ";
+                        <td><a OnClick='confirmar(event)'  type='submit'style='color:black;' class='btn btn-primary btn-lg' href='ejecutarEliminarLista.php?id_asistencia=".$columna['id_asistencia']."&id_rp=".$rpapp." '>Eliminar</a>
+                        <a  type='submit' style='color:black;''  class='btn btn-primary btn-lg' href='editarAsistentes.php?id_asistencia=".$columna['id_asistencia']."'> Editar </a></td></tr>  ";
 
                     	}
 

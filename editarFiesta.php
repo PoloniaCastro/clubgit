@@ -18,7 +18,9 @@ $idFiesta = $_GET["id_fiesta"];
 <?
 
 if ($_SESSION['permisos']==1) {
-  $consulta = "SELECT * FROM fiestas WHERE id_fiesta='".$idFiesta."'";
+  $consulta = "SELECT * FROM fiestas
+  inner join empresas on empresas.id_empresas= fiestas.id_empresa
+  WHERE id_fiesta='".$idFiesta."'";
   $resultado = mysqli_query( $conexion, $consulta ) or die ( "Algo ha ido mal en la consulta a la base de datos");
   while ($columna = mysqli_fetch_array( $resultado )) {
   ?>
@@ -70,12 +72,11 @@ if ($_SESSION['permisos']==1) {
                     </tr>
                     <tr>
                       <td>Empresa</td>
-                      <td><select name="SelectEmpresa">
-                          <option value="0">Seleccione</option>
+                      <td><select name="selectEmpresa">
+                          <option value="<? echo $columna['id_empresa']; ?>"><? echo $columna['nombre_empresas']; ?></option>
                           <?
                           include_once 'clases/conexion.php';
                               $consulta2 = "SELECT id_empresas, nombre_empresas FROM empresas ";
-                              //$consulta2 = "select id_repartidor, nombre_repartidor from repartidores where id_rp='".$rpRegistro."' ";
                               $resultado2 = mysqli_query( $conexion, $consulta2 ) or die ( "Algo ha ido mal en la consulta a la base de datos");
 
                               while ($columna2 = mysqli_fetch_array( $resultado2 ))

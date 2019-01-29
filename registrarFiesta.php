@@ -70,7 +70,6 @@ if ($_SESSION['permisos']==1) {
                           <?
                           include_once 'clases/conexion.php';
                               $consulta2 = "SELECT id_empresas, nombre_empresas FROM empresas ";
-                              //$consulta2 = "select id_repartidor, nombre_repartidor from repartidores where id_rp='".$rpRegistro."' ";
                               $resultado2 = mysqli_query( $conexion, $consulta2 ) or die ( "Algo ha ido mal en la consulta a la base de datos");
 
                               while ($columna2 = mysqli_fetch_array( $resultado2 ))

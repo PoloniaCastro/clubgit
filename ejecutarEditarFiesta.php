@@ -7,7 +7,7 @@ $nombreFiesta = $_POST["txtNombreFiesta"];
 $lugar = $_POST["txtLugar"];
 $fecha = $_POST["txtFecha"];
 $hora = $_POST["txtHora"];
-$empresa = $_POST["SelectEmpresa"];
+$empresa = $_POST["selectEmpresa"];
 $idEmpresa = $_SESSION["empresa"];
 $idFiesta = $_POST["id_fiesta"];
 
