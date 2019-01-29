@@ -90,7 +90,7 @@ validación de rut
 
 
               }
-            }else {
+      }else {
 
               echo "<script>
                  alert('RUT REPETIDO - INGRESADO POR OTRO RP ');

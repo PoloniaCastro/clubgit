@@ -16,7 +16,7 @@ if($resultado)
 {
   echo "<script>
              alert('Modificación exitosa');
-             window.location= 'registrarFiesta.php'
+             window.location= 'listar.php'
  </script>";
 }
 
