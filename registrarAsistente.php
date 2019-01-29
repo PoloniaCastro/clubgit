@@ -79,7 +79,7 @@ $idEmpresa = $_SESSION["empresa"];
                     <tr>
                       <td>Repartidor</td>
                       <td><select name="SelectRepartidor">
-                          <option value="0">Seleccione</option>
+                          
                           <?
                           include_once 'clases/conexion.php';
 
@@ -112,7 +112,7 @@ $idEmpresa = $_SESSION["empresa"];
                     <tr>
                       <td>Fiesta</td>
                       <td><select name="SelectFiesta">
-                          <option value="0">Seleccione</option>
+                          
                           <?
                           include_once 'clases/conexion.php';
                               $consulta2 = "SELECT id_fiesta, nombre_fiesta FROM fiestas where id_empresa= '".$idEmpresa."' ";

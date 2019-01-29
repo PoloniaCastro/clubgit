@@ -66,7 +66,7 @@ if ($_SESSION['permisos']==1) {
                     <tr>
                       <td>Empresa</td>
                       <td><select name="SelectEmpresa">
-                          <option value="0">Seleccione</option>
+                          
                           <?
                           include_once 'clases/conexion.php';
                               $consulta2 = "SELECT id_empresas, nombre_empresas FROM empresas ";
