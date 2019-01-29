@@ -17,7 +17,7 @@ $idFiesta= $_GET["SelectFiesta"];
                   <thead>
                     <tr>
                       <th>Nombre</th>
-                      <th>Apellido</th>
+                      
                       <th>RP</th>
                       <th>Repartidor</th>
                       <th>fiesta</th>
@@ -28,7 +28,7 @@ $idFiesta= $_GET["SelectFiesta"];
                   <tfoot>
                     <tr>
                       <th>Nombre</th>
-                      <th>Apellido</th>
+                     
                       <th>RP</th>
                       <th>Repartidor</th>
                       <th>fiesta</th>
@@ -79,7 +79,7 @@ $idFiesta= $_GET["SelectFiesta"];
 
                     	  $rutsql =  $columna['rut'];
 
-                    	  echo "<tr><td>".utf8_encode($columna['nombre'])."</td><td>".utf8_encode($columna['apellido'])."</td><td>".$columna['nombrerp']."</td><td>".$columna['nombre_repartidor']."</td><td>".$columna['nombre_fiesta']."</td><td>".$columna['estate']."</td>
+                    	  echo "<tr><td>".utf8_encode($columna['nombre'])."</td><td>".$columna['nombrerp']."</td><td>".$columna['nombre_repartidor']."</td><td>".$columna['nombre_fiesta']."</td><td>".$columna['estate']."</td>
 
                         <td><a OnClick='confirmar(event)'  type='submit'style='color:black;' class='btn btn-primary btn-lg' href='ejecutarEliminarLista.php?id_asistencia=".$columna['id_asistencia']."&id_rp=".$rpapp." '>Eliminar</a>
                         <a  type='submit' style='color:black;''  class='btn btn-primary btn-lg' href='editarAsistentes.php?id_asistencia=".$columna['id_asistencia']."'> Editar </a></td></tr>  ";

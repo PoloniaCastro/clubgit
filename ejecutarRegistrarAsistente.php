@@ -93,7 +93,7 @@ validación de rut
             }else {
 
               echo "<script>
-                 alert('RUT YA INGRESADO ');
+                 alert('RUT REPETIDO - INGRESADO POR OTRO RP ');
                  window.location= 'registrarAsistente.php?selecionRp=$rpRegistro'
                 </script>";
               }
