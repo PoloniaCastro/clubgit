@@ -144,7 +144,10 @@ if ($_SESSION['permisos']==1) {
             <div class="dropdown-divider"></div>
             <h6 class="dropdown-header">Fiestas</h6>
             <a class="dropdown-item" href="registrarFiesta.php">Registrar Fiesta</a>
-            
+            <div class="dropdown-divider"></div>
+            <h6 class="dropdown-header">RP</h6>
+            <a class="dropdown-item" href="registrarRp.php">Registrar RP</a>
+
           </div>
         </li>
 
@@ -176,10 +179,14 @@ if ($_SESSION['permisos']==1) {
                   </li>
 
 
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Editar</span></a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Copiar asistentes</span></a>
+            <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+              <h6 class="dropdown-header">Asistentes</h6>
+              <a class="dropdown-item" href="exportarAsistentes.php">Copiar Asistentes</a>
+            </div>
         </li>
 
                 <li class="nav-item">
