@@ -1,26 +1,47 @@
 <?
 include_once("menu.php");
 $idEmpresa = $_SESSION["empresa"];
-$idFiesta = $_GET["selectFiesta"];
 ?>
 
           <!-- DataTables Example -->
           <div class="card mb-3">
             <div class="card-header">
               <i class="fas fa-table"></i>
-              Validación de asistentes </div>
+              Seleccione la fiesta </div>
             <div class="card-body">
               <div class="table-responsive">
 
                 <!-- form -->
-                <form class="form" method="GET" action="ejecutarValidar.php">
+                <form class="form" method="GET" action="validate.php">
                   <table  style="margin: 0 auto;">
                     <tr>
-                      <td>Rut</td>
-                      <td><input type="text" class="form-control" name="txtRut" required  placeholder="Ej: (12345678-9)"/></td></td>
-                      
+                      <td>Fiesta</td>
+                      <td><select name="selectFiesta">
+                          <option value="0">Seleccione</option>
+                          <?
+                          include_once 'clases/conexion.php';
+                              $consulta2 = "SELECT id_fiesta, nombre_fiesta FROM fiestas where id_empresa= '".$idEmpresa."' ";
+                              $resultado2 = mysqli_query( $conexion, $consulta2 ) or die ( "Algo ha ido mal en la consulta a la base de datos");
 
-                      <input  type="hidden" class="form-control" name="hiddenFiesta"  value="<?=$idFiesta?>"/>
+                              while ($columna2 = mysqli_fetch_array( $resultado2 ))
+                            {
+                              if ($idEmpresa==$columna2['id_fiesta'])
+                              {
+                                $varfea="selected";
+
+                              }else {
+                                $varfea="";
+                              }
+                              echo '<option '.$varfea.' value="'.$columna2['id_fiesta'].'">'.utf8_encode($columna2['nombre_fiesta']).'</option>';
+
+                            }
+
+
+                          ?>
+
+
+
+                      </td>
 
                     <td>&nbsp;</td>
                     </tr>

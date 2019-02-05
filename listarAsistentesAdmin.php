@@ -98,7 +98,7 @@ $idFiesta = $_GET["selectFiesta"];
 
                     	  $rutsql =  $columna['rut'];
 
-                    	  echo "<tr><td>".utf8_encode($columna['nombre'])."</td><td>".utf8_encode($columna['nombrerp'])."</td><td>".utf8_encode($columna['nombre_repartidor'])."</td><td>".utf8_encode($columna['nombre_fiesta'])."</td><td>".$columna['estate']."</td>
+                    	  echo "<tr><td>".utf8_encode($columna['nombre'])."</td><td>".utf8_encode($columna['nombrerp'])."</td><td>".utf8_encode($columna['nombre_repartidor'])."</td><td>".utf8_encode($columna['nombre_fiesta'])."</td><td>".utf8_encode($columna['estate'])."</td>
                       <td>  <a type='submit' style='color:black;'' class='btn btn-primary btn-lg' href='editarAsistencia.php?id_asistencia=".$columna['id_asistencia']."&selectFiesta=".$columna['id_fiesta']."'> Asistió </a></td></tr>
                       ";
 

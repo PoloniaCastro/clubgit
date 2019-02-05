@@ -46,22 +46,18 @@ $idFiesta= $_GET["SelectFiesta"];
                     	// Datos de la base de datos
                     	$rpapp = $_SESSION['id2'];
 
-
-                    	// Selección del a base de datos a utilizar
-                    	//$db = mysqli_select_db( $conexion, $basededatos ) or die ( "Upps! Pues va a ser que no se ha podido conectar a la base de datos" );
-                    	// establecer y realizar consulta. guardamos en variable.
-                    	$consulta = "select * from asistencia
+                      $consulta = "select * from asistencia
                       inner join rp on rp.id=asistencia.rp
                        inner join estate on estate.id=asistencia.estado
                        inner join repartidores as re on re.id_repartidor = asistencia.repartidor
                        inner join fiestas on fiestas.id_fiesta = asistencia.fiesta
                         WHERE rp=".$rpapp." and id_fiesta = ".$idFiesta."
                        ORDER BY repartidor DESC, estado DESC";
-                    	$consulta2 = "SELECT count(*) as total from asistencia WHERE `estado`=1 and rp=".$rpapp."  ";
+                    	$consulta2 = "SELECT count(*) as total from asistencia WHERE `estado`=1 and rp=".$rpapp." and fiesta= ".$idFiesta." ";
                     	$resultado2 = mysqli_query( $conexion, $consulta2 ) or die ( "Algo ha ido mal en la consulta a la base de datos.");
                     	$resultado = mysqli_query( $conexion, $consulta ) or die ( "Algo ha ido mal en la consulta a la base de datos");
 
-  	$consulta3 = "SELECT count(*) as total from asistencia WHERE rp=".$rpapp."";
+  	$consulta3 = "SELECT count(*) as total from asistencia WHERE rp=".$rpapp." and fiesta = ".$idFiesta."";
 
 	$resultado3 = mysqli_query( $conexion, $consulta3 ) or die ( "Algo ha ido mal en la consulta a la base de datos2.");
 		while ($columna3 = mysqli_fetch_array( $resultado3 ))
@@ -70,7 +66,6 @@ $idFiesta= $_GET["SelectFiesta"];
 	  echo "<h3> Usted tiene ";
 	  echo  $columna3['total'];
      echo " invitados </h3>";
-   
 	}
 
 
@@ -89,7 +84,7 @@ $idFiesta= $_GET["SelectFiesta"];
 
                     	  $rutsql =  $columna['rut'];
 
-                    	  echo "<tr><td>".utf8_encode($columna['nombre'])."</td><td>".utf8_encode($columna['nombrerp'])."</td><td>".utf8_encode($columna['nombre_repartidor'])."</td><td>".utf8_encode($columna['nombre_fiesta'])."</td><td>".$columna['estate']."</td>
+                    	  echo "<tr><td>".utf8_encode($columna['nombre'])."</td><td>".utf8_encode($columna['nombrerp'])."</td><td>".utf8_encode($columna['nombre_repartidor'])."</td><td>".utf8_encode($columna['nombre_fiesta'])."</td><td>".utf8_encode($columna['estate'])."</td>
 
                         <td><a OnClick='confirmar(event)'  type='submit'style='color:black;' class='btn btn-primary btn-lg' href='ejecutarEliminarLista.php?id_asistencia=".$columna['id_asistencia']."&id_rp=".$rpapp." '>Eliminar</a>
                         <a  type='submit' style='color:black;''  class='btn btn-primary btn-lg' href='editarAsistentes.php?id_asistencia=".$columna['id_asistencia']."'> Editar </a></td></tr>  ";
