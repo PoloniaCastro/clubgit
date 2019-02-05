@@ -59,8 +59,8 @@ $idEmpresa = $_SESSION["empresa"];
                             while ($columna = mysqli_fetch_array( $resultado ))
                           {
                             ?>
-                           <h3> <?=$columna["nombrerp"];?> </h3>
-<input readonly type="hidden" class="form-control" name="selecionRp" placeholder="<?=$columna["nombrerp"];?>" value="<?=$_SESSION["id2"];?>"/>
+                           <h3> <?=utf8_encode($columna["nombrerp"]);?> </h3>
+<input readonly type="hidden" class="form-control" name="selecionRp" placeholder="<?=utf8_encode($columna["nombrerp"]);?>" value="<?=$_SESSION["id2"];?>"/>
 
 <?
                           }
