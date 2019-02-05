@@ -123,7 +123,7 @@ if (!$_SESSION) {
             <span>Menú</span>
           </a>
         </li>
-
+<?if ($_SESSION['permisos']==1 || $_SESSION['permisos']==2 || $_SESSION['permisos']==0 ) {?>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-fw fa-folder"></i>
@@ -138,7 +138,7 @@ if (!$_SESSION) {
 
 
 <?
-
+}
 if ($_SESSION['permisos']==1) {
   ?>
             <div class="dropdown-divider"></div>
@@ -153,6 +153,7 @@ if ($_SESSION['permisos']==1) {
 
 <?
 }
+if ($_SESSION['permisos']==1 || $_SESSION['permisos']==2 || $_SESSION['permisos']==0 ) {
 ?>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -174,7 +175,7 @@ if ($_SESSION['permisos']==1) {
                       <a class="dropdown-item" href="listarRepartidores.php">Listar repartidores</a>
 
                       <?
-
+}
                       if ($_SESSION['permisos']==1) {
                         ?>
 
@@ -197,25 +198,28 @@ if ($_SESSION['permisos']==1) {
                           <a class="dropdown-item" href="validarFiesta.php">Validar</a>
                         </div>
                     </li>
-                    <?}?>
+                    <?} if ($_SESSION['permisos']==1 || $_SESSION['permisos']==2 || $_SESSION['permisos']==0 ) {?>
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-fw fa-folder"></i>
             <span>Copiar asistentes</span></a>
 
         </li>
+<?}if ($_SESSION['permisos']==1 || $_SESSION['permisos']==2 || $_SESSION['permisos']==0 ) {?>
 
                 <li class="nav-item">
           <a class="nav-link" href="#">
             <i class="fas fa-fw fa-table"></i>
             <span>Modificar Empresa</span></a>
         </li>
-
+<?} if ($_SESSION['permisos']==1 || $_SESSION['permisos']==2 || $_SESSION['permisos']==0 ) {?>
                 <li class="nav-item">
           <a class="nav-link" href="#">
             <i class="fas fa-fw fa-table"></i>
             <span>Centro de documentos</span></a>
         </li>
+<?}?>
       </ul>
 
 
