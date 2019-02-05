@@ -162,6 +162,14 @@ if ($_SESSION['permisos']==1) {
                     <div class="dropdown-menu" aria-labelledby="pagesDropdown">
                       <h6 class="dropdown-header">Asistentes</h6>
                       <a class="dropdown-item" href="listar.php">Listar asistentes</a>
+                      <?if ($_SESSION['permisos']==2) {?>
+                        <a class="dropdown-item" href="listarTodos.php">Listar todos asistentes</a>
+                      <?}?>
+
+                        <?if ($_SESSION['permisos']==1) {?>
+                          <a class="dropdown-item" href="listarTodosFiesta.php">Listar todos asistentes</a>
+                          <?}?>
+
                       <h6 class="dropdown-header">Repartidores</h6>
                       <a class="dropdown-item" href="listarRepartidores.php">Listar repartidores</a>
 
@@ -176,6 +184,7 @@ if ($_SESSION['permisos']==1) {
                       <a class="dropdown-item" href="index.php">Listar Fiesta</a>
                       <?}?>
 
+
                   </li>
 
 
@@ -183,10 +192,7 @@ if ($_SESSION['permisos']==1) {
           <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-fw fa-folder"></i>
             <span>Copiar asistentes</span></a>
-            <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-              <h6 class="dropdown-header">Asistentes</h6>
-              <a class="dropdown-item" href="exportarAsistentes.php">Copiar Asistentes</a>
-            </div>
+
         </li>
 
                 <li class="nav-item">
@@ -295,3 +301,4 @@ if ($_SESSION['permisos']==1) {
         </div>
       </div>
     </div>
+</html>

@@ -35,7 +35,7 @@ if ($_SESSION) {
                     <div class="card-body-icon">
                       <i class="fas fa-fw fa-life-ring"></i>
                     </div>
-                    <div class="mr-5"><? echo $columna2['nombre_fiesta']; ?></div>
+                    <div class="mr-5"><? echo utf8_encode($columna2['nombre_fiesta']); ?></div>
                     <div class="mr-5">Lugar:<? echo  utf8_encode($columna2['lugar_fiesta']); ?></div>
                     <div class="mr-5">Fecha:<? echo  date('j/m/Y',strtotime($columna2['fecha_fiesta'])); ?></div>
                     <div class="mr-5">Hora:<? echo  date('H:i',$timestamp) ; ?></div>

@@ -3,7 +3,7 @@
 include_once 'clases/conexion.php';
 
 $correo = $_POST["txtCorreo"];
-$contrasenia = $_POST['txtContrasenia'];
+$contrasenia = md5($_POST['txtContrasenia']);
 $_SESSION['correo'] = $correo;
 
 

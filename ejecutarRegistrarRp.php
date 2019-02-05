@@ -6,7 +6,7 @@ include_once("menu.php");
 $nombreRp = $_POST["txtNombre"];
 $correoRp = $_POST["txtCorreo"];
 $contraseniaRp = $_POST["txtContrasenia"];
-$contrasenia = sha1($contraseniaRp);
+$contrasenia = md5($contraseniaRp);
 $nom = utf8_decode($nombreRp);
 
 $consultaSelect = "SELECT * FROM rp where correo='$correoRp'";

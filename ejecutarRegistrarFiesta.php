@@ -3,8 +3,8 @@ include_once 'clases/servicio.php';
 include_once 'clases/conexion.php';
 include_once("menu.php");
 
-$nombreFiesta = $_POST["txtNombreFiesta"];
-$lugar = $_POST["txtLugar"];
+$nombreFiesta = utf8_decode($_POST["txtNombreFiesta"]);
+$lugar = utf8_decode($_POST["txtLugar"]);
 $fecha = $_POST["txtFecha"];
 $hora = $_POST["txtHora"];
 $empresa = $_POST["SelectEmpresa"];

@@ -36,7 +36,7 @@ if ($_SESSION['permisos']==1) {
                     </tr>
                     <tr>
                       <td>Nombre de fiesta</td>
-                      <td><input type="text" class="form-control" name="txtNombreFiesta" placeholder="Nombre" value="<? echo $columna['nombre_fiesta']; ?>"/></td>
+                      <td><input type="text" class="form-control" name="txtNombreFiesta" placeholder="Nombre" value="<? echo utf8_encode($columna['nombre_fiesta']); ?>"/></td>
                     <td>&nbsp;</td>
                     </tr>
                     <tr>
@@ -45,7 +45,7 @@ if ($_SESSION['permisos']==1) {
                     </tr>
                     <tr>
                       <td>Lugar</td>
-                      <td><input type="text" style="width:300px;height:30px" class="form-control form-control- " name="txtLugar" placeholder="Ej: Viña del Mar" value="<? echo $columna['lugar_fiesta']; ?>"/></td>
+                      <td><input type="text" style="width:300px;height:30px" class="form-control form-control- " name="txtLugar" placeholder="Ej: Viña del Mar" value="<? echo utf8_encode($columna['lugar_fiesta']); ?>"/></td>
                       </th>
                     </tr>
                     <tr>
@@ -73,10 +73,9 @@ if ($_SESSION['permisos']==1) {
                     <tr>
                       <td>Empresa</td>
                       <td><select name="selectEmpresa">
-                          <option value="<? echo $columna['id_empresa']; ?>"><? echo $columna['nombre_empresas']; ?></option>
-                          <?
+                            <?
                           include_once 'clases/conexion.php';
-                              $consulta2 = "SELECT id_empresas, nombre_empresas FROM empresas ";
+                              $consulta2 = "SELECT id_empresas, nombre_empresas FROM empresas  where id_empresas = '".$_SESSION['empresa']."'";
                               $resultado2 = mysqli_query( $conexion, $consulta2 ) or die ( "Algo ha ido mal en la consulta a la base de datos");
 
                               while ($columna2 = mysqli_fetch_array( $resultado2 ))
@@ -88,7 +87,7 @@ if ($_SESSION['permisos']==1) {
                               }else {
                                 $varfea="";
                               }
-                              echo '<option '.$varfea.' value="'.$columna2['id_empresas'].'">'.$columna2['nombre_empresas'].'</option>';
+                              echo '<option '.$varfea.' value="'.$columna2['id_empresas'].'">'.utf8_encode($columna2['nombre_empresas']).'</option>';
 
                             }
 

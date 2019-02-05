@@ -2,7 +2,7 @@
 include_once 'clases/servicio.php';
 include_once 'clases/conexion.php';
 include_once("menu.php");
-$nombreRepartidor = $_POST["txtNombreRepartidores"];
+$nombreRepartidor = utf8_decode($_POST["txtNombreRepartidores"]);
 $rpId=  $_SESSION["id2"];
 $idEmpresa = $_SESSION["empresa"];
 

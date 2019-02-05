@@ -66,7 +66,7 @@ if ($_SESSION['permisos']==1) {
                     <tr>
                       <td>Empresa</td>
                       <td><select name="SelectEmpresa">
-                          
+
                           <?
                           include_once 'clases/conexion.php';
                               $consulta2 = "SELECT id_empresas, nombre_empresas FROM empresas ";
@@ -81,7 +81,7 @@ if ($_SESSION['permisos']==1) {
                               }else {
                                 $varfea="";
                               }
-                              echo '<option '.$varfea.' value="'.$columna2['id_empresas'].'">'.$columna2['nombre_empresas'].'</option>';
+                              echo '<option '.$varfea.' value="'.$columna2['id_empresas'].'">'.utf8_encode($columna2['nombre_empresas']).'</option>';
 
                             }
 

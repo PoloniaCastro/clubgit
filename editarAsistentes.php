@@ -37,7 +37,7 @@ $idAsistentes = $_GET["id_asistencia"];
                     </tr>
                     <tr>
                       <td>Nombre</td>
-                      <td><input type="text" class="form-control" name="txtNombre"   placeholder="Nombre" value="<? echo $columnaAsistencia['nombre']; ?>"/></td>
+                      <td><input type="text" class="form-control" name="txtNombre"   placeholder="Nombre" value="<? echo utf8_encode($columnaAsistencia['nombre']); ?>"/></td>
                     <td>&nbsp;</td>
                     </tr>
                     <tr>
@@ -69,8 +69,8 @@ $idAsistentes = $_GET["id_asistencia"];
                             while ($columna = mysqli_fetch_array( $resultado ))
                           {
                             ?>
-                           <h3> <?=$columna["nombrerp"];?> </h3>
-<input type="hidden" class="form-control" name="selecionRp" placeholder="<?=$columna["nombrerp"];?>" value="<?=$_SESSION["id2"];?>"/>
+                           <h3> <?=utf8_encode($columna["nombrerp"]);?> </h3>
+<input type="hidden" class="form-control" name="selecionRp" placeholder="<?=utf8_encode($columna["nombrerp"]);?>" value="<?=$_SESSION["id2"];?>"/>
 
 <?
                           }
@@ -89,8 +89,7 @@ $idAsistentes = $_GET["id_asistencia"];
                     <tr>
                       <td>Repartidor</td>
                       <td><select name="SelectRepartidor">
-                          <option value="<? echo $columnaAsistencia['repartidor']; ?>"><? echo $columnaAsistencia['nombre_repartidor']; ?></option>
-                          <?
+                            <?
                           include_once 'clases/conexion.php';
 
                               $consultaRepartidor = "select id_repartidor, nombre_repartidor from repartidores where id_rp='".$rpRegistro."' ";
@@ -105,7 +104,7 @@ $idAsistentes = $_GET["id_asistencia"];
                               }else {
                                 $varfea="";
                               }
-                              echo '<option '.$varfea.' value="'.$columnaRepartidor['id_repartidor'].'">'.$columnaRepartidor['nombre_repartidor'].'</option>';
+                              echo '<option '.$varfea.' value="'.$columnaRepartidor['id_repartidor'].'">'.utf8_encode($columnaRepartidor['nombre_repartidor']).'</option>';
 
                             }
 
@@ -122,11 +121,9 @@ $idAsistentes = $_GET["id_asistencia"];
                     <tr>
                       <td>Fiesta</td>
                       <td><select name="SelectFiesta">
-                          <option value="<? echo $columnaAsistencia['fiesta']; ?>"><? echo $columnaAsistencia['nombre_fiesta']; ?></option>
-                          <?
+                            <?
                           include_once 'clases/conexion.php';
                               $consulta2 = "SELECT id_fiesta, nombre_fiesta FROM fiestas where id_empresa= '".$idEmpresa."' ";
-                              //$consulta2 = "select id_repartidor, nombre_repartidor from repartidores where id_rp='".$rpRegistro."' ";
                               $resultado2 = mysqli_query( $conexion, $consulta2 ) or die ( "Algo ha ido mal en la consulta a la base de datos");
 
                               while ($columna2 = mysqli_fetch_array( $resultado2 ))
@@ -138,7 +135,7 @@ $idAsistentes = $_GET["id_asistencia"];
                               }else {
                                 $varfea="";
                               }
-                              echo '<option '.$varfea.' value="'.$columna2['id_fiesta'].'">'.$columna2['nombre_fiesta'].'</option>';
+                              echo '<option '.$varfea.' value="'.$columna2['id_fiesta'].'">'.utf8_encode($columna2['nombre_fiesta']).'</option>';
 
                             }
 

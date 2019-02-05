@@ -79,7 +79,7 @@ $idEmpresa = $_SESSION["empresa"];
                     <tr>
                       <td>Repartidor</td>
                       <td><select name="SelectRepartidor">
-                          
+
                           <?
                           include_once 'clases/conexion.php';
 
@@ -95,7 +95,7 @@ $idEmpresa = $_SESSION["empresa"];
                               }else {
                                 $varfea="";
                               }
-                              echo '<option '.$varfea.' value="'.$columna2['id_repartidor'].'">'.$columna2['nombre_repartidor'].'</option>';
+                              echo '<option '.$varfea.' value="'.$columna2['id_repartidor'].'">'.utf8_encode($columna2['nombre_repartidor']).'</option>';
 
                             }
 
@@ -112,7 +112,7 @@ $idEmpresa = $_SESSION["empresa"];
                     <tr>
                       <td>Fiesta</td>
                       <td><select name="SelectFiesta">
-                          
+
                           <?
                           include_once 'clases/conexion.php';
                               $consulta2 = "SELECT id_fiesta, nombre_fiesta FROM fiestas where id_empresa= '".$idEmpresa."' ";
@@ -128,7 +128,7 @@ $idEmpresa = $_SESSION["empresa"];
                               }else {
                                 $varfea="";
                               }
-                              echo '<option '.$varfea.' value="'.$columna2['id_fiesta'].'">'.$columna2['nombre_fiesta'].'</option>';
+                              echo '<option '.$varfea.' value="'.$columna2['id_fiesta'].'">'.utf8_encode($columna2['nombre_fiesta']).'</option>';
 
                             }
 

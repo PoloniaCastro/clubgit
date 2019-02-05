@@ -5,7 +5,7 @@ include_once("menu.php");
 $mensaje = "";
 
   //captura de Datos
- $nombre = $_POST["txtNombre"];
+ $nombre = utf8_decode($_POST["txtNombre"]);
 
  $rut = $_POST["txtRut"];
  $dv = $_POST["txtDv"];

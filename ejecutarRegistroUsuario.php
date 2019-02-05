@@ -5,7 +5,7 @@ include_once 'clases/conexion.php';
 $nombre = $_POST["txtNombre"];
 $correo = $_POST["txtCorreo"];
 $contrasenia = $_POST["txtContrasenia"];
-$pass = sha1($contrasenia);
+$pass = md5($contrasenia);
 
 $consulta1 = "SELECT count(*) FROM rp WHERE correo = '$correo'" ;
 $resultado = mysqli_query( $conexion, $consulta1 ) or die ( "Algo ha ido mal en la consulta a la base de datos");

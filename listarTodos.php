@@ -7,15 +7,16 @@ $idEmpresa = $_SESSION["empresa"];
           <div class="card mb-3">
             <div class="card-header">
               <i class="fas fa-table"></i>
-              Lista de asistentes</div>
+              Lista General de Asistentes</div>
             <div class="card-body">
               <div class="table-responsive">
+
                 <!-- form -->
-                <form class="form" method="GET" action="ejecutarListar.php">
+                <form class="form" method="GET" action="listarTodosAsistentes.php">
                   <table  style="margin: 0 auto;">
                     <tr>
                       <td>Fiesta</td>
-                      <td><select name="SelectFiesta">
+                      <td><select name="selectFiesta">
                           <option value="0">Seleccione</option>
                           <?
                           include_once 'clases/conexion.php';
