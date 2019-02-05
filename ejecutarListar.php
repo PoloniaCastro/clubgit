@@ -61,15 +61,25 @@ $idFiesta= $_GET["SelectFiesta"];
                     	$resultado2 = mysqli_query( $conexion, $consulta2 ) or die ( "Algo ha ido mal en la consulta a la base de datos.");
                     	$resultado = mysqli_query( $conexion, $consulta ) or die ( "Algo ha ido mal en la consulta a la base de datos");
 
+  	$consulta3 = "SELECT count(*) as total from asistencia WHERE rp=".$rpapp."";
 
+	$resultado3 = mysqli_query( $conexion, $consulta3 ) or die ( "Algo ha ido mal en la consulta a la base de datos2.");
+		while ($columna3 = mysqli_fetch_array( $resultado3 ))
+	{
+
+	  echo "<h3> Usted tiene ";
+	  echo  $columna3['total'];
+     echo " invitados </h3>";
+   
+	}
 
 
                     		while ($columna2 = mysqli_fetch_array( $resultado2 ))
                     	{
 
-                    	  echo "<h1> Usted tuvo ";
+                    	  echo "<h3> Usted tuvo ";
                     	  echo  $columna2['total'];
-                         echo " asistentes </h1>";
+                         echo " asistentes </h3>";
                     	}
 
 
