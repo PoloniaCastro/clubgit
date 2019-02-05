@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <?php
 include_once("menu.php");
+include_once 'clases/conexion.php';
 $mensaje = "";
 $rpRegistro = 0;
 $rpRegistro = $_SESSION["id2"];
 $idEmpresa = $_SESSION["empresa"];
+$idRp = $_GET['id'];
 
 ?>
 
@@ -12,11 +14,19 @@ $idEmpresa = $_SESSION["empresa"];
           <div class="card mb-3">
             <div class="card-header">
               <i class="fas fa-table"></i>
-              Registro de RP</div>
+            Modificación Registro de RP</div>
+
+            <?
+            $consultaRp = "SELECT * FROM rp where id = '".$idRp."'";
+            $resultadoRp = mysqli_query( $conexion, $consultaRp ) or die ( "Algo ha ido mal en la consulta a la base de datos");
+            while ($columnaRp = mysqli_fetch_array( $resultadoRp )) {
+
+            ?>
+
             <div class="card-body">
               <div class="table-responsive">
                 <!-- form -->
-                <form class="form" method="POST" action="ejecutarRegistrarRp.php">
+                <form class="form" method="POST" action="ejecutarEditarRp.php">
                   <table  style="margin: 0 auto;">
                     <tr>
             <td>&nbsp;</td>
@@ -24,16 +34,18 @@ $idEmpresa = $_SESSION["empresa"];
                     </tr>
                     <tr>
                       <td>Nombre</td>
-                      <td><input type="text" class="form-control" name="txtNombre" required  placeholder="Nombre"/></td>
+                      <td><input type="text" class="form-control" name="txtNombre" required  placeholder="Nombre" value="<? echo utf8_encode($columnaRp['nombrerp']); ?>"/></td>
                     <td>&nbsp;</td>
                     </tr>
                     <tr>
             <td>&nbsp;</td>
 
                     </tr>
+                    <input  type="hidden" class="form-control" name="hiddenRp"  value="<?=$idRp?>"/>
+
                     <tr>
                       <td>Correo</td>
-                      <td><input type="email" style="width:300px;height:30px" class="form-control form-control- " name="txtCorreo" required  placeholder="Ej: algo@gmail.com"/></td>
+                      <td><input type="email" style="width:300px;height:30px" class="form-control form-control- " name="txtCorreo" required  placeholder="Ej: algo@gmail.com" value="<? echo utf8_encode($columnaRp['correo']); ?>"/></td>
                       </th>
                     </tr>
                     <tr>
@@ -42,20 +54,9 @@ $idEmpresa = $_SESSION["empresa"];
                     </tr>
                     <tr>
                       <td>Límite Lista</td>
-                      <td><input type="text" class="form-control" name="txtLimite" required  placeholder="Ej: 120"/></td>
+                      <td><input type="text" class="form-control" name="txtLimite" required  placeholder="Ej: 120" value="<? echo $columnaRp['limite']; ?>"/></td>
                     <td>&nbsp;</td>
                     </tr>
-                    <tr>
-            <td>&nbsp;</td>
-
-                    </tr>
-                    <tr>
-                      <td>Contraseña</td>
-                      <td><input type="password" style="width:300px;height:30px" class="form-control form-control- " name="txtContrasenia" required  placeholder="Contraseña"/></td>
-                      </th>
-                    </tr>
-
-
                     <tr>
             <td>&nbsp;</td>
 
@@ -73,6 +74,7 @@ $idEmpresa = $_SESSION["empresa"];
                 </form>
               </div>
             </div>
+            <?}?>
           <!-- <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>-->
           </div>
 

@@ -13,6 +13,7 @@ $mensaje = "";
  $varRepartidor = $_POST["SelectRepartidor"];
  $varFiesta = $_POST["SelectFiesta"];
  $idEmpresa = $_SESSION["empresa"];
+ $limite = $_SESSION['limite'];
 
 $rutUnido=$rut."-".$dv;
 
@@ -72,24 +73,43 @@ validación de rut
     $scan = $fila[0];
     if($scan ==0)
     {
+      //desde aquí
+
+        $consultaLimit = "SELECT count(*) FROM asistencia where fiesta='$varFiesta' and rp = '$rpRegistro'";
+        $resultado2 = mysqli_query( $conexion, $consultaLimit ) or die ( "Algo ha ido mal en la consulta a la base de datos");
+        $fila2 = mysqli_fetch_array($resultado2);
+
+        $top = $fila2[0];
+        if($top == 0 )
+        {
+
+
+        }
+
+
+
+
+          //fin d.a.
+          $consulta = "INSERT INTO asistencia(nombre, rut, rp, repartidor, fiesta) VALUES ('".$nombre."', '".$rutUnido."', '".$rpRegistro."', '".$varRepartidor."', '".$varFiesta."')";
+          $resultado = mysqli_query( $conexion, $consulta ) or die ( "Algo ha ido mal en la consulta a la base de datos");
+
+          if($resultado)
+          {
+            echo "<script>
+                       alert('Registro exitoso');
+                       window.location= 'registrarAsistente.php?selecionRp=$rpRegistro'
+           </script>";
+
+
+
+          }
 
 
 
 
 
-              $consulta = "INSERT INTO asistencia(nombre, rut, rp, repartidor, fiesta) VALUES ('".$nombre."', '".$rutUnido."', '".$rpRegistro."', '".$varRepartidor."', '".$varFiesta."')";
-              $resultado = mysqli_query( $conexion, $consulta ) or die ( "Algo ha ido mal en la consulta a la base de datos");
-
-              if($resultado)
-              {
-                echo "<script>
-                           alert('Registro exitoso');
-                           window.location= 'registrarAsistente.php?selecionRp=$rpRegistro'
-               </script>";
 
 
-
-              }
       }else {
 
               echo "<script>

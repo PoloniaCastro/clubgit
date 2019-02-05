@@ -22,6 +22,7 @@ $resultado = mysqli_query( $conexion, $consulta1 ) or die ( "Algo ha ido mal en 
      $_SESSION['permisos'] = $fila2['permisos'];
      $_SESSION['empresa'] = $fila2['id_empresa'];
      $_SESSION['fiestas'] = $fila2['id_fiesta'];
+     $_SESSION['limite'] = $fila2['limite'];
       header("location: index.php");
 
 

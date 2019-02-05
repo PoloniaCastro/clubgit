@@ -123,7 +123,7 @@ if (!$_SESSION) {
             <span>Menú</span>
           </a>
         </li>
-<?if ($_SESSION['permisos']==1 || $_SESSION['permisos']==2 || $_SESSION['permisos']==0 ) {?>
+<?if ($_SESSION['permisos']==1  || $_SESSION['permisos']==0 ) {?>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-fw fa-folder"></i>
@@ -147,13 +147,19 @@ if ($_SESSION['permisos']==1) {
             <div class="dropdown-divider"></div>
             <h6 class="dropdown-header">RP</h6>
             <a class="dropdown-item" href="registrarRp.php">Registrar RP</a>
+            <div class="dropdown-divider"></div>
+            <h6 class="dropdown-header">Validadores</h6>
+            <a class="dropdown-item" href="registrarValidadores.php">Registrar Validadores</a>
+            <div class="dropdown-divider"></div>
+            <h6 class="dropdown-header">Solo Vista Lista</h6>
+            <a class="dropdown-item" href="registrarSoloVista.php">Registrar</a>
 
           </div>
         </li>
 
 <?
 }
-if ($_SESSION['permisos']==1 || $_SESSION['permisos']==2 || $_SESSION['permisos']==0 ) {
+if ($_SESSION['permisos']==1 ||  $_SESSION['permisos']==0 ) {
 ?>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -187,6 +193,20 @@ if ($_SESSION['permisos']==1 || $_SESSION['permisos']==2 || $_SESSION['permisos'
 
 
                   </li>
+                  <?if ($_SESSION['permisos']==2) {?>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fas fa-fw fa-folder"></i>
+                      <span>Listar</span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+                      <h6 class="dropdown-header">Lista general Asistentes</h6>
+
+
+                        <a class="dropdown-item" href="listarTodos.php">Listar todos asistentes</a>
+                      <?}?>
+                    </li>
+
 
                   <?if ($_SESSION['permisos']==3) {?>
                     <li class="nav-item dropdown">
@@ -198,26 +218,27 @@ if ($_SESSION['permisos']==1 || $_SESSION['permisos']==2 || $_SESSION['permisos'
                           <a class="dropdown-item" href="validarFiesta.php">Validar</a>
                         </div>
                     </li>
-                    <?} if ($_SESSION['permisos']==1 || $_SESSION['permisos']==2 || $_SESSION['permisos']==0 ) {?>
+                    <?} if ($_SESSION['permisos']==1 ||  $_SESSION['permisos']==0 ) {?>
 
-        <li class="nav-item dropdown">
+
+<?}if ($_SESSION['permisos']==1 ) {?>
+
+                <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-fw fa-folder"></i>
-            <span>Copiar asistentes</span></a>
-
-        </li>
-<?}if ($_SESSION['permisos']==1 || $_SESSION['permisos']==2 || $_SESSION['permisos']==0 ) {?>
-
-                <li class="nav-item">
-          <a class="nav-link" href="#">
             <i class="fas fa-fw fa-table"></i>
             <span>Modificar Empresa</span></a>
+            <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+
+              <a class="dropdown-item" href="">Modificar Empresa</a>
+            </div>
+
         </li>
-<?} if ($_SESSION['permisos']==1 || $_SESSION['permisos']==2 || $_SESSION['permisos']==0 ) {?>
+<?} if ($_SESSION['permisos']==1 ) {?>
                 <li class="nav-item">
           <a class="nav-link" href="#">
             <i class="fas fa-fw fa-table"></i>
             <span>Centro de documentos</span></a>
+
         </li>
 <?}?>
       </ul>

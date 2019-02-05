@@ -12,11 +12,11 @@ $idEmpresa = $_SESSION["empresa"];
           <div class="card mb-3">
             <div class="card-header">
               <i class="fas fa-table"></i>
-              Registro de RP</div>
+              Registro de Validadores</div>
             <div class="card-body">
               <div class="table-responsive">
                 <!-- form -->
-                <form class="form" method="POST" action="ejecutarRegistrarRp.php">
+                <form class="form" method="POST" action="ejecutarRegistrarValidadores.php">
                   <table  style="margin: 0 auto;">
                     <tr>
             <td>&nbsp;</td>
@@ -35,15 +35,6 @@ $idEmpresa = $_SESSION["empresa"];
                       <td>Correo</td>
                       <td><input type="email" style="width:300px;height:30px" class="form-control form-control- " name="txtCorreo" required  placeholder="Ej: algo@gmail.com"/></td>
                       </th>
-                    </tr>
-                    <tr>
-            <td>&nbsp;</td>
-
-                    </tr>
-                    <tr>
-                      <td>Límite Lista</td>
-                      <td><input type="text" class="form-control" name="txtLimite" required  placeholder="Ej: 120"/></td>
-                    <td>&nbsp;</td>
                     </tr>
                     <tr>
             <td>&nbsp;</td>
