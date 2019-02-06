@@ -226,10 +226,11 @@ if ($_SESSION['permisos']==1 ||  $_SESSION['permisos']==0 ) {
                 <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-fw fa-table"></i>
-            <span>Modificar Empresa</span></a>
+            <span>Empresa</span></a>
             <div class="dropdown-menu" aria-labelledby="pagesDropdown">
 
-              <a class="dropdown-item" href="">Modificar Empresa</a>
+              <a class="dropdown-item" href="modificarEmpresas.php">Modificar Empresa</a>
+              <a class="dropdown-item" href="verEmpresa.php">Ver Empresa</a>
             </div>
 
         </li>

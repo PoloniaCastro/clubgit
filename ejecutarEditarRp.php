@@ -3,7 +3,7 @@ include_once 'clases/servicio.php';
 include_once 'clases/conexion.php';
 include_once("menu.php");
 
-$nombreRp = $_POST["txtNombre"];
+$nombreRp = utf8_decode($_POST["txtNombre"]);
 $correoRp = $_POST["txtCorreo"];
 $limite = $_POST["txtLimite"];
 $idrp = $_POST["hiddenRp"];
