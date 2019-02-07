@@ -9,22 +9,45 @@ $direccionEm = utf8_decode($_POST["txtDireccion"]);
 $nomLegal = utf8_decode($_POST["txtNombreLegal"]);
 $telefonoEm = $_POST["txtTelefono"];
 $correoEm =$_POST["txtCorreo"];
-$imagen = $_FILES["imagen"]["name"];//obtiene el nombre_empresas
-$archivo = $_FILES["imagen"]["tmp_name"];//contiene el archivo
-$ruta = "images";
-$ruta=$ruta."/".$imagen; ///images/nombre.jpg
 
-move_uploaded_file($archivo, $ruta);
 
-$consulta = "UPDATE empresas SET  nombre_empresas = '".$nombre."', rut_empresas = '".$rutEm."', direccion_empresas ='".$direccionEm."', nombre_repr_legal='".$nomLegal."', telefono='".$telefonoEm."', correo_empresas='".$correoEm."', nombre_img ='".$imagen."', ruta_img ='".$ruta."'
+
+
+$consulta = "UPDATE empresas SET  nombre_empresas = '".$nombre."', rut_empresas = '".$rutEm."', direccion_empresas ='".$direccionEm."', nombre_repr_legal='".$nomLegal."', telefono='".$telefonoEm."', correo_empresas='".$correoEm."'
 WHERE id_empresas= '". $_SESSION['empresa']."'";
 $resultado = mysqli_query( $conexion, $consulta ) or die ( "Algo ha ido mal en la consulta a la base de datos");
 
-if($resultado)
+
+$consultaSelect = "SELECT id_empresas FROM empresas order by id_empresas DESC LIMIT 0,1 ";
+$resultadoSelect = mysqli_query( $conexion, $consultaSelect ) or die ( "Algo ha ido mal en la consulta a la base de datos");
+while ($columna = mysqli_fetch_array( $resultadoSelect ))
 {
-  echo "<script>
-             alert('Modificación exitosa');
-             window.location= 'verEmpresa.php'
- </script>";
+  $id_not = $columna['id_empresas'];
+
 }
+  if(is_uploaded_file($_FILES['imagen']['tmp_name']))
+  {
+      $imagen1 = $id_not."_1".".jpg";
+      $ruta = "img/$imagen1";
+      $imagen = "img/$imagen1";
+      if(copy($_FILES['imagen']['tmp_name'], $imagen))
+      {
+      }
+      $consultaUpdate = "UPDATE empresas set ruta_img='".$ruta."' where id_empresas= '".$id_not."'";
+      $resultadoUp = mysqli_query( $conexion, $consultaUpdate ) or die ( "Algo ha ido mal en la consulta a la base de datos");
+/*
+      if($consultaUpdate)
+      {
+        echo "<script>
+                   alert('Modificación exitosa');
+                   window.location= 'verEmpresa.php'
+       </script>";
+     }*/
+  }
+
+
+
+
+
+
 ?>

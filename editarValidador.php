@@ -1,70 +1,71 @@
-<?
+<!DOCTYPE html>
+<?php
 include_once("menu.php");
+include_once 'clases/conexion.php';
+$mensaje = "";
+$rpRegistro = 0;
+$rpRegistro = $_SESSION["id2"];
+$idEmpresa = $_SESSION["empresa"];
+$idRp = $_GET['id'];
+
 ?>
 
           <!-- DataTables Example -->
           <div class="card mb-3">
             <div class="card-header">
               <i class="fas fa-table"></i>
-              Lista de repartidores</div>
+            Modificación de validadores</div>
+
+            <?
+            $consultaRp = "SELECT * FROM rp where id = '".$idRp."'";
+            $resultadoRp = mysqli_query( $conexion, $consultaRp ) or die ( "Algo ha ido mal en la consulta a la base de datos");
+            while ($columnaRp = mysqli_fetch_array( $resultadoRp )) {
+
+            ?>
+
             <div class="card-body">
               <div class="table-responsive">
                 <!-- form -->
-                <form class="form" method="GET" action="ejecutarEliminarListaRepartidores.php">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
+                <form class="form" method="POST" action="ejecutarEditarValidador.php">
+                  <table  style="margin: 0 auto;">
                     <tr>
-                      <th>Nombre</th>
+            <td>&nbsp;</td>
 
-                      <th>RP</th>
-                      <th></th>
+                    </tr>
+                    <tr>
+                      <td>Nombre</td>
+                      <td><input type="text" class="form-control" name="txtNombre" required  placeholder="Nombre" value="<? echo utf8_encode($columnaRp['nombrerp']); ?>"/></td>
+                    <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+            <td>&nbsp;</td>
+
+                    </tr>
+                    <input  type="hidden" class="form-control" name="hiddenRp"  value="<?=$idRp?>"/>
+
+                    <tr>
+                      <td>Correo</td>
+                      <td><input type="email" style="width:300px;height:30px" class="form-control form-control- " name="txtCorreo" required  placeholder="Ej: algo@gmail.com" value="<? echo utf8_encode($columnaRp['correo']); ?>"/></td>
+                      </th>
+                    </tr>
+                    <tr>
+            <td>&nbsp;</td>
+
+                    </tr>
+
+
+                    <tr>
+                      <td></td>
+                      <td><div>
+                        <button type="submit" class="btn btn-primary btn-lg">Guardar</button>
+                      </div></td>
                       <th></th>
                     </tr>
-                  </thead>
-                  <tfoot>
-                    <tr>
-                      <th>Nombre</th>
-
-                      <th>RP</th>
-                      <th></th>
-                      <th></th>
-                    </tr>
-                  </tfoot>
-                  <tbody>
-                    <?php
-                    include_once("clases/conexion.php");
-
-                    	$rpapp = $_SESSION['id2'];
-
-                      $consulta1= "SELECT * FROM repartidores
-                      inner join rp on rp.id = repartidores.id_rp where id_rp = ".$rpapp."
-                      ORDER by id_rp DESC";
-                      $resultado1 = mysqli_query( $conexion, $consulta1 ) or die ( "Algo ha ido mal en la consulta a la base de datos.");
-
-
-                    	while ($columna = mysqli_fetch_array( $resultado1 ))
-                    	{
-
-
-                    	  echo "<tr><td>".utf8_encode($columna['nombre_repartidor'])."</td><td>".utf8_encode($columna['nombrerp'])."</td>
-
-                        <td><a OnClick='confirmar(event)' type='submit'style='color:black;' class='btn btn-primary btn-lg' href='ejecutarEliminarListaRepartidores.php?id_repartidor=".$columna['id_repartidor']." &id_rp=".$rpapp."'>Eliminar</a></td>
-                        <td><a type='submit'style='color:black;' class='btn btn-primary btn-lg' href='modificarRepartidores.php?id_repartidor=".$columna['id_repartidor']." &id_rp=".$rpapp."'>Editar</a></td></tr>  ";
-
-                    	}
-
-
-
-
-
-
-                    	mysqli_close( $conexion );
-                        ?>
-                  </tbody>
-                </table>
+                  </table>
                 </form>
               </div>
             </div>
+            <?}?>
           <!-- <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>-->
           </div>
 
@@ -129,8 +130,6 @@ include_once("menu.php");
     <script src="js/demo/datatables-demo.js"></script>
     <script src="js/demo/chart-area-demo.js"></script>
 
-
-        <script src="confirmacion.js"></script>
   </body>
 
 </html>

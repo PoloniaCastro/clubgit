@@ -26,7 +26,7 @@ $idEmpresa = $_SESSION["empresa"];
             <div class="card-body">
               <div class="table-responsive">
                 <!-- form -->
-                <form class="form" method="POST" action="ejecutarModificarEmpresas.php">
+                <form class="form" enctype="multipart/form-data" method="POST" action="ejecutarModificarEmpresas.php">
                   <table  style="margin: 0 auto;">
                     <tr>
             <td>&nbsp;</td>
@@ -90,7 +90,7 @@ $idEmpresa = $_SESSION["empresa"];
                     </tr>
                     <tr>
                       <td>Imagen Corporativa</td>
-                      <td><input  type="file" name="imagen" class="input-add" /></td>
+                      <td><input  type="file" name="imagen" size="30"  class="input-add" /></td>
                       </th>
                     </tr>
                     <tr>

@@ -123,7 +123,7 @@ if (!$_SESSION) {
             <span>Menú</span>
           </a>
         </li>
-<?if ($_SESSION['permisos']==1  || $_SESSION['permisos']==0 ) {?>
+<?if ( $_SESSION['permisos']==0 ) {?>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-fw fa-folder"></i>
@@ -139,27 +139,14 @@ if (!$_SESSION) {
 
 <?
 }
-if ($_SESSION['permisos']==1) {
-  ?>
-            <div class="dropdown-divider"></div>
-            <h6 class="dropdown-header">Fiestas</h6>
-            <a class="dropdown-item" href="registrarFiesta.php">Registrar Fiesta</a>
-            <div class="dropdown-divider"></div>
-            <h6 class="dropdown-header">RP</h6>
-            <a class="dropdown-item" href="registrarRp.php">Registrar RP</a>
-            <div class="dropdown-divider"></div>
-            <h6 class="dropdown-header">Validadores</h6>
-            <a class="dropdown-item" href="registrarValidadores.php">Registrar Validadores</a>
-            <div class="dropdown-divider"></div>
-            <h6 class="dropdown-header">Solo Vista Lista</h6>
-            <a class="dropdown-item" href="registrarSoloVista.php">Registrar</a>
 
-          </div>
+  ?>
+
         </li>
 
 <?
-}
-if ($_SESSION['permisos']==1 ||  $_SESSION['permisos']==0 ) {
+
+if ( $_SESSION['permisos']==0 ) {
 ?>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -169,27 +156,18 @@ if ($_SESSION['permisos']==1 ||  $_SESSION['permisos']==0 ) {
                     <div class="dropdown-menu" aria-labelledby="pagesDropdown">
                       <h6 class="dropdown-header">Asistentes</h6>
                       <a class="dropdown-item" href="listar.php">Listar asistentes</a>
-                      <?if ($_SESSION['permisos']==2) {?>
-                        <a class="dropdown-item" href="listarTodos.php">Listar todos asistentes</a>
-                      <?}?>
 
-                        <?if ($_SESSION['permisos']==1) {?>
-                          <a class="dropdown-item" href="listarTodosFiesta.php">Listar todos asistentes</a>
-                          <?}?>
 
                       <h6 class="dropdown-header">Repartidores</h6>
                       <a class="dropdown-item" href="listarRepartidores.php">Listar repartidores</a>
 
-                      <?
+  <?
 }
-                      if ($_SESSION['permisos']==1) {
-                        ?>
 
-                      <h6 class="dropdown-header">RP</h6>
-                      <a class="dropdown-item" href="listarRp.php">Listar rp</a>
-                      <h6 class="dropdown-header">Fiesta</h6>
-                      <a class="dropdown-item" href="index.php">Listar Fiesta</a>
-                      <?}?>
+?>
+
+
+
 
 
                   </li>
@@ -223,6 +201,78 @@ if ($_SESSION['permisos']==1 ||  $_SESSION['permisos']==0 ) {
 
 <?}if ($_SESSION['permisos']==1 ) {?>
 
+                  <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-fw fa-folder"></i>
+                <span>Asistentes</span></a>
+                <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+
+                <a class="dropdown-item" href="registrarAsistente.php">Registrar asistentes</a>
+                <a class="dropdown-item" href="listar.php">Listar asistentes</a>
+                <a class="dropdown-item" href="listarTodosFiesta.php">Lista General</a>
+                </div>
+
+                </li>
+
+                <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-fw fa-folder"></i>
+              <span>Repartidores</span></a>
+              <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+
+              <a class="dropdown-item" href="registrarRepartidores.php">Registrar repartidores </a>
+              <a class="dropdown-item" href="listarRepartidores.php">Listar repartidores</a>
+              </div>
+
+              </li>
+              <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>RP</span></a>
+            <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+
+            <a class="dropdown-item" href="registrarRp.php">Registrar RP </a>
+            <a class="dropdown-item" href="listarRp.php">Listar RP</a>
+            </div>
+
+            </li>
+            <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Fiestas</span></a>
+          <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+
+          <a class="dropdown-item" href="registrarFiesta.php">Registrar Fiesta </a>
+          <a class="dropdown-item" href="index.php">Listar Fiesta</a>
+          </div>
+
+          </li>
+          <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-fw fa-folder"></i>
+        <span>Validadores</span></a>
+        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+
+        <a class="dropdown-item" href="registrarValidadores.php">Registrar validador</a>
+        <a class="dropdown-item" href="listarValidador.php">Listar validador</a>
+        </div>
+
+        </li>
+        <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <i class="fas fa-fw fa-folder"></i>
+      <span>Usuario Vista</span></a>
+      <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+
+      <a class="dropdown-item" href="registrarSoloVista.php">Registrar solo vista</a>
+      <a class="dropdown-item" href="listarSoloVista.php">Lista solo vista</a>
+      </div>
+
+      </li>
+
+
+
+
                 <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-fw fa-table"></i>
@@ -234,14 +284,15 @@ if ($_SESSION['permisos']==1 ||  $_SESSION['permisos']==0 ) {
             </div>
 
         </li>
-<?} if ($_SESSION['permisos']==1 ) {?>
-                <li class="nav-item">
-          <a class="nav-link" href="#">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Centro de documentos</span></a>
+        <li class="nav-item">
+  <a class="nav-link" href="#">
+    <i class="fas fa-fw fa-table"></i>
+    <span>Centro de documentos</span></a>
 
-        </li>
-<?}?>
+</li>
+<?} ?>
+
+
       </ul>
 
 

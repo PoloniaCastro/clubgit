@@ -6,17 +6,16 @@ include_once("menu.php");
           <div class="card mb-3">
             <div class="card-header">
               <i class="fas fa-table"></i>
-              Lista de repartidores</div>
+              Lista de usuarios con acceso a lista general</div>
             <div class="card-body">
               <div class="table-responsive">
                 <!-- form -->
-                <form class="form" method="GET" action="ejecutarEliminarListaRepartidores.php">
+                <form class="form" method="GET" action="">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
                       <th>Nombre</th>
 
-                      <th>RP</th>
                       <th></th>
                       <th></th>
                     </tr>
@@ -25,7 +24,6 @@ include_once("menu.php");
                     <tr>
                       <th>Nombre</th>
 
-                      <th>RP</th>
                       <th></th>
                       <th></th>
                     </tr>
@@ -34,11 +32,10 @@ include_once("menu.php");
                     <?php
                     include_once("clases/conexion.php");
 
-                    	$rpapp = $_SESSION['id2'];
 
-                      $consulta1= "SELECT * FROM repartidores
-                      inner join rp on rp.id = repartidores.id_rp where id_rp = ".$rpapp."
-                      ORDER by id_rp DESC";
+
+                      $consulta1= "SELECT * FROM rp where permisos=2";
+
                       $resultado1 = mysqli_query( $conexion, $consulta1 ) or die ( "Algo ha ido mal en la consulta a la base de datos.");
 
 
@@ -46,10 +43,10 @@ include_once("menu.php");
                     	{
 
 
-                    	  echo "<tr><td>".utf8_encode($columna['nombre_repartidor'])."</td><td>".utf8_encode($columna['nombrerp'])."</td>
+                    	  echo "<tr><td>".utf8_encode($columna['nombrerp'])."</td>
 
-                        <td><a OnClick='confirmar(event)' type='submit'style='color:black;' class='btn btn-primary btn-lg' href='ejecutarEliminarListaRepartidores.php?id_repartidor=".$columna['id_repartidor']." &id_rp=".$rpapp."'>Eliminar</a></td>
-                        <td><a type='submit'style='color:black;' class='btn btn-primary btn-lg' href='modificarRepartidores.php?id_repartidor=".$columna['id_repartidor']." &id_rp=".$rpapp."'>Editar</a></td></tr>  ";
+                        <td><a OnClick='confirmar(event)' type='submit'style='color:black;' class='btn btn-primary btn-lg' href='ejecutarEliminarSoloVista.php?id=".$columna['id']." '>Eliminar</a></td>
+                        <td><a  type='submit'style='color:black;' class='btn btn-primary btn-lg' href='editarsoloVista.php?id=".$columna['id']." '>Editar</a></td></tr>  ";
 
                     	}
 
