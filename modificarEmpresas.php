@@ -89,8 +89,8 @@ $idEmpresa = $_SESSION["empresa"];
 
                     </tr>
                     <tr>
-                      <td>Imagen Corporativa</td>
-                      <td><input  type="file" name="imagen" size="30"  class="input-add" /></td>
+                      <td>Imagen Corporativa (1025x183)</td>
+                      <td><input  type="file" name="imagen" size="35"  class="input-add" /></td>
                       </th>
                     </tr>
                     <tr>

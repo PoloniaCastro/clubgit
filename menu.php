@@ -1,5 +1,6 @@
     <?
 session_start();
+include_once 'clases/conexion.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -300,12 +301,38 @@ if ( $_SESSION['permisos']==0 ) {
 
 }
 ?>
+<?
 
+if ($_SESSION) {
+  ?>
 
       <div id="content-wrapper">
 
         <div class="container-fluid">
-<img class="img-fluid" src="img/club.png">
+          <?
+          $consultaEmpresas = "SELECT * FROM empresas where id_empresas = '".$_SESSION['empresa']."'";
+          $resultadoEmpresas = mysqli_query( $conexion, $consultaEmpresas ) or die ( "Algo ha ido mal en la consulta a la base de datos");
+          while ($columnaEmpresa = mysqli_fetch_array( $resultadoEmpresas )) {
+            if($columnaEmpresa['ruta_img'] ==""){
+              ?>
+              <img  width="1025" height="183" src="img/invitaApp.png">
+            <?}else {?>
+              <img  width="1025" height="183" src="<?php echo $columnaEmpresa['ruta_img']; ?>">
+          <?  }
+          ?>
+
+
+<?}}
+//class="img-fluid" ?>
+<?
+
+if (!$_SESSION) {
+  ?>
+  <div id="content-wrapper">
+
+    <div class="container-fluid">
+  <img  width="1025" height="183" src="img/invitaApp.png">
+<?}?>
           <!-- Breadcrumbs-->
           <ol class="breadcrumb">
             <li class="breadcrumb-item">
