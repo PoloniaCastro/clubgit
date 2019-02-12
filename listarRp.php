@@ -34,7 +34,7 @@ include_once("menu.php");
 
                     	//$rpapp = $_SESSION['id2'];
 
-                      $consulta1= "SELECT * FROM rp";
+                      $consulta1= "SELECT * FROM rp where permisos = 0";
 
                       $resultado1 = mysqli_query( $conexion, $consulta1 ) or die ( "Algo ha ido mal en la consulta a la base de datos.");
 

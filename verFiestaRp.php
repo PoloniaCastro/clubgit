@@ -1,42 +1,92 @@
 <?
 include_once("menu.php");
+include_once 'clases/conexion.php';
+$mensaje = "";
+$rpRegistro = 0;
+$rpRegistro = $_SESSION["id2"];
+$idEmpresa = $_SESSION["empresa"];
+$idRp = $_GET["id"];
+
 ?>
 
           <!-- DataTables Example -->
           <div class="card mb-3">
             <div class="card-header">
               <i class="fas fa-table"></i>
-              Lista de usuarios con acceso a lista general</div>
+              Lista fiestas de Rp </div>
+              <?
+              $consultaRp = "SELECT * FROM rp where id = '".$idRp."'";
+              $resultadoRp = mysqli_query( $conexion, $consultaRp ) or die ( "Algo ha ido mal en la consulta a la base de datos");
+              while ($columnaRp = mysqli_fetch_array( $resultadoRp )) {
+
+              ?>
             <div class="card-body">
               <div class="table-responsive">
                 <!-- form -->
-                <form class="form" method="GET" action="">
+                <table class="table table-bordered">
+                  <tr><? echo"RP: ". utf8_encode($columnaRp['nombrerp']);
+                        ?></tr>
+
+
+                </table>
+                <form class="form" method="GET" action="ejecutarEliminarListaRp.php">
+                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+
+                      <tr>
+                        <th>Fiestas Permitidas</th>
+
+                        <th>Bloquear</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+
+                      <?php
+
+                        $consulta1= "SELECT * FROM fiestas inner join rp_fiestas on rp_fiestas.id_fiesta = fiestas.id_fiesta where id = ".$columnaRp['id'] ."";
+
+                        $resultado1 = mysqli_query( $conexion, $consulta1 ) or die ( "Algo ha ido mal en la consulta a la base de datos.");
+
+
+                      	while ($columna = mysqli_fetch_array( $resultado1 ))
+                      	{
+
+
+                      	  echo "<tr><td>".utf8_encode($columna['nombre_fiesta'])."</td>
+
+
+                          <td><a  type='submit'style='color:black;' class='btn btn-primary btn-lg' href='bloquearFiesta.php?id_fiesta=".$columna['id_fiesta']."& id=".$columnaRp['id']."'>Bloquear</a></td></tr>  ";
+
+                      	}
+
+
+
+
+
+
+
+                          ?>
+                    </tbody>
+                  </table>
+
+
+
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
-                    <tr>
-                      <th>Nombre</th>
 
-                      <th>Eliminar</th>
-                      <th>Editar</th>
-                      <th>Fiestas</th>
+                    <tr>
+                      <th>Fiestas Totales Disponibles</th>
+                      <th>Acceder</th>
+
                     </tr>
                   </thead>
-                  <tfoot>
-                    <tr>
-                      <th>Nombre</th>
 
-                      <th>Eliminar</th>
-                      <th>Editar</th>
-                      <th>Fiestas</th>
-                    </tr>
-                  </tfoot>
                   <tbody>
+
                     <?php
-                    include_once("clases/conexion.php");
 
-
-
-                      $consulta1= "SELECT * FROM rp where permisos=2";
+                      $consulta1= "SELECT * FROM fiestas ";
 
                       $resultado1 = mysqli_query( $conexion, $consulta1 ) or die ( "Algo ha ido mal en la consulta a la base de datos.");
 
@@ -45,11 +95,10 @@ include_once("menu.php");
                     	{
 
 
-                    	  echo "<tr><td>".utf8_encode($columna['nombrerp'])."</td>
+                    	  echo "<tr><td>".utf8_encode($columna['nombre_fiesta'])."</td>
 
-                        <td><a OnClick='confirmar(event)' type='submit'style='color:black;' class='btn btn-primary btn-lg' href='ejecutarEliminarSoloVista.php?id=".$columna['id']." '>Eliminar</a></td>
-                        <td><a  type='submit'style='color:black;' class='btn btn-primary btn-lg' href='editarsoloVista.php?id=".$columna['id']." '>Editar</a></td>
-                        <td><a  type='submit'style='color:black;' class='btn btn-primary btn-lg' href='fiestaSoloVista.php?id=".$columna['id']." '>Editar</a></td></tr>  ";
+                        <td><a  type='submit'style='color:black;' class='btn btn-primary btn-lg' href='accederFiesta.php?id_fiesta=".$columna['id_fiesta']." & id=".$columnaRp['id']."'>Acceder</a></td>
+                        </tr>  ";
 
                     	}
 
@@ -65,6 +114,7 @@ include_once("menu.php");
                 </form>
               </div>
             </div>
+            <?}?>
           <!-- <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>-->
           </div>
 

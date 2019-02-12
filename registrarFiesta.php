@@ -3,6 +3,7 @@
 include_once("menu.php");
 $rpRegistro = 0;
 $rpRegistro = $_SESSION["id2"];
+$idFiesta = $_SESSION['empresa'];
 
 ?>
 
@@ -69,7 +70,7 @@ if ($_SESSION['permisos']==1) {
 
                           <?
                           include_once 'clases/conexion.php';
-                              $consulta2 = "SELECT id_empresas, nombre_empresas FROM empresas ";
+                              $consulta2 = "SELECT id_empresas, nombre_empresas FROM empresas where id_empresas= '".$idFiesta."' ";
                               $resultado2 = mysqli_query( $conexion, $consulta2 ) or die ( "Algo ha ido mal en la consulta a la base de datos");
 
                               while ($columna2 = mysqli_fetch_array( $resultado2 ))

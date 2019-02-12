@@ -16,16 +16,18 @@ include_once("menu.php");
                     <tr>
                       <th>Nombre</th>
 
-                      <th></th>
-                      <th></th>
+                      <th>Eliminar</th>
+                      <th>Editar</th>
+                      <th>Fiestas</th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
                       <th>Nombre</th>
 
-                      <th></th>
-                      <th></th>
+                      <th>Eliminar</th>
+                      <th>Editar</th>
+                      <th>Fiestas</th>
                     </tr>
                   </tfoot>
                   <tbody>
@@ -46,7 +48,8 @@ include_once("menu.php");
                     	  echo "<tr><td>".utf8_encode($columna['nombrerp'])."</td>
 
                         <td><a OnClick='confirmar(event)' type='submit'style='color:black;' class='btn btn-primary btn-lg' href='ejecutarEliminarValidador.php?id=".$columna['id']." '>Eliminar</a></td>
-                        <td><a  type='submit'style='color:black;' class='btn btn-primary btn-lg' href='editarValidador.php?id=".$columna['id']." '>Editar</a></td></tr>  ";
+                        <td><a  type='submit'style='color:black;' class='btn btn-primary btn-lg' href='editarValidador.php?id=".$columna['id']." '>Editar</a></td>
+                        <td><a  type='submit'style='color:black;' class='btn btn-primary btn-lg' href='fiestasValidador.php?id=".$columna['id']." '>Fiestas</a></td></tr>  ";
 
                     	}
 

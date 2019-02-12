@@ -42,7 +42,7 @@ if ($_SESSION) {
 
 
                     </div>
-                    
+
                   <a class="card-footer text-white clearfix small z-1" href="#">
 
                     <a OnClick='confirmar(event)' type="submit" style="color:black;"  class="btn btn-primary btn-lg" href="ejecutarEliminarFiesta.php?id_fiesta=<? echo  utf8_encode($columna2['id_fiesta']); ?>"> Eliminar</a>

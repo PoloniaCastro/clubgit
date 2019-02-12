@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <?php
 include_once("menu.php");
+include_once 'clases/conexion.php';
 $mensaje = "";
 $rpRegistro = 0;
 $rpRegistro = $_SESSION["id2"];
 $idEmpresa = $_SESSION["empresa"];
+$idRp = $_GET['id'];
 
 ?>
 
@@ -12,11 +14,19 @@ $idEmpresa = $_SESSION["empresa"];
           <div class="card mb-3">
             <div class="card-header">
               <i class="fas fa-table"></i>
-              Registro acceso vista general</div>
+            Modificación de Permisos</div>
+
+            <?
+            $consultaRp = "SELECT * FROM rp where id = '".$idRp."'";
+            $resultadoRp = mysqli_query( $conexion, $consultaRp ) or die ( "Algo ha ido mal en la consulta a la base de datos");
+            while ($columnaRp = mysqli_fetch_array( $resultadoRp )) {
+
+            ?>
+
             <div class="card-body">
               <div class="table-responsive">
                 <!-- form -->
-                <form class="form" method="POST" action="ejecutarSoloVista.php">
+                <form class="form" method="POST" action="ejecutarPermisosRp.php">
                   <table  style="margin: 0 auto;">
                     <tr>
             <td>&nbsp;</td>
@@ -24,35 +34,49 @@ $idEmpresa = $_SESSION["empresa"];
                     </tr>
                     <tr>
                       <td>Nombre</td>
-                      <td><input type="text" class="form-control" name="txtNombre" required  placeholder="Nombre"/></td>
+                      <td><input readonly type="text" class="form-control" name="txtNombre" required  placeholder="Nombre" value="<? echo utf8_encode($columnaRp['nombrerp']); ?>"/></td>
                     <td>&nbsp;</td>
                     </tr>
                     <tr>
             <td>&nbsp;</td>
 
                     </tr>
+                    <input  type="hidden" class="form-control" name="hiddenRp"  value="<?=$idRp?>"/>
+
+
+
+
                     <tr>
-                      <td>Correo</td>
-                      <td><input type="email" style="width:300px;height:30px" class="form-control form-control- " name="txtCorreo" required  placeholder="Ej: algo@gmail.com"/></td>
-                      </th>
+                      <td>Permisos</td>
+                      <td><select name="selectPermisos">
+
+                        <?
+                        include_once 'clases/conexion.php';
+                            $consulta2 = "SELECT permisos FROM rp  ";
+                            $resultado2 = mysqli_query( $conexion, $consulta2 ) or die ( "Algo ha ido mal en la consulta a la base de datos");
+
+
+                            $permisosAdmin = "Administrador";
+                            $permisosValidadores = "Validador";
+                            $permisosSoloVista = "Solo Vista";
+                            $permisosRp = "Rp";
+
+                            echo '<option name = "permisosAdmin"  value="1">'.$permisosAdmin.'</option>';
+                            echo '<option  name = "permisosRP" value="0">'.$permisosRp.'</option>';
+                            echo '<option name ="permisosValidador" value="3">'.$permisosValidadores.'</option>';
+                            echo '<option  name = "permisosSoloVista" value="2">'.$permisosSoloVista.'</option>';
+
+
+
+
+                        ?>
+                      </td>
+                    <td>&nbsp;</td>
                     </tr>
                     <tr>
             <td>&nbsp;</td>
 
                     </tr>
-                    <tr>
-                      <td>Contraseña</td>
-                      <td><input type="password" style="width:300px;height:30px" class="form-control form-control- " name="txtContrasenia" required  placeholder="Contraseña"/></td>
-                      </th>
-                    </tr>
-
-
-                    <tr>
-            <td>&nbsp;</td>
-
-                    </tr>
-                    
-
 
                     <tr>
                       <td></td>
@@ -65,6 +89,7 @@ $idEmpresa = $_SESSION["empresa"];
                 </form>
               </div>
             </div>
+            <?}?>
           <!-- <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>-->
           </div>
 

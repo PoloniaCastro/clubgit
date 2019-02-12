@@ -1,6 +1,7 @@
 <?
 include_once("menu.php");
 $idEmpresa = $_SESSION["empresa"];
+$rpRegistro = $_SESSION["id2"];
 ?>
 
           <!-- DataTables Example -->
@@ -13,13 +14,17 @@ $idEmpresa = $_SESSION["empresa"];
                 <!-- form -->
                 <form class="form" method="GET" action="ejecutarListar.php">
                   <table  style="margin: 0 auto;">
+                    
+
                     <tr>
                       <td>Fiesta</td>
                       <td><select name="SelectFiesta">
                           <option value="0">Seleccione</option>
                           <?
                           include_once 'clases/conexion.php';
-                              $consulta2 = "SELECT id_fiesta, nombre_fiesta FROM fiestas where id_empresa= '".$idEmpresa."' ";
+                              $consulta2 = "SELECT * FROM fiestas
+                              inner join rp_fiestas on rp_fiestas.id_fiesta = fiestas.id_fiesta
+                              where id_empresa= '".$idEmpresa."' and id= '".$rpRegistro."' ";
                               //$consulta2 = "select id_repartidor, nombre_repartidor from repartidores where id_rp='".$rpRegistro."' ";
                               $resultado2 = mysqli_query( $conexion, $consulta2 ) or die ( "Algo ha ido mal en la consulta a la base de datos");
 

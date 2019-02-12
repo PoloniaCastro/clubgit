@@ -52,7 +52,11 @@ $idRp = $_GET['id'];
             <td>&nbsp;</td>
 
                     </tr>
+                    
+                    <tr>
+                    <td>&nbsp;</td>
 
+                    </tr>
 
                     <tr>
                       <td></td>

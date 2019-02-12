@@ -6,6 +6,7 @@ include_once("menu.php");
 $nombreValida = utf8_decode($_POST["txtNombre"]);
 $correoValida = $_POST["txtCorreo"];
 $contraseniaValida = md5($_POST["txtContrasenia"]);
+$idFiesta = $_POST["SelectFiesta"];
 $permisos = 3;
 
 $consultaSelect = "SELECT * FROM rp where correo='$correoValida'";

@@ -1,67 +1,64 @@
-<!DOCTYPE html>
-<?php
+<?
 include_once("menu.php");
-$mensaje = "";
-$rpRegistro = 0;
-$rpRegistro = $_SESSION["id2"];
-$idEmpresa = $_SESSION["empresa"];
-
 ?>
 
           <!-- DataTables Example -->
           <div class="card mb-3">
             <div class="card-header">
               <i class="fas fa-table"></i>
-              Registro acceso vista general</div>
+              Lista de permisos</div>
             <div class="card-body">
               <div class="table-responsive">
                 <!-- form -->
-                <form class="form" method="POST" action="ejecutarSoloVista.php">
-                  <table  style="margin: 0 auto;">
+                <form class="form" method="post" action="cambiarPermisosRp.php">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
                     <tr>
-            <td>&nbsp;</td>
+                      <th>Nombre</th>
+                      <th>Permiso actual</th>
 
-                    </tr>
-                    <tr>
-                      <td>Nombre</td>
-                      <td><input type="text" class="form-control" name="txtNombre" required  placeholder="Nombre"/></td>
-                    <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-            <td>&nbsp;</td>
-
-                    </tr>
-                    <tr>
-                      <td>Correo</td>
-                      <td><input type="email" style="width:300px;height:30px" class="form-control form-control- " name="txtCorreo" required  placeholder="Ej: algo@gmail.com"/></td>
-                      </th>
-                    </tr>
-                    <tr>
-            <td>&nbsp;</td>
-
-                    </tr>
-                    <tr>
-                      <td>Contraseña</td>
-                      <td><input type="password" style="width:300px;height:30px" class="form-control form-control- " name="txtContrasenia" required  placeholder="Contraseña"/></td>
-                      </th>
-                    </tr>
-
-
-                    <tr>
-            <td>&nbsp;</td>
-
-                    </tr>
-                    
-
-
-                    <tr>
-                      <td></td>
-                      <td><div>
-                        <button type="submit" class="btn btn-primary btn-lg">Guardar</button>
-                      </div></td>
                       <th></th>
                     </tr>
-                  </table>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>Nombre</th>
+                      <th>Permiso actual</th>
+
+                      <th></th>
+                    </tr>
+                  </tfoot>
+                  <tbody>
+                    <?php
+                    include_once("clases/conexion.php");
+
+                    	//$rpapp = $_SESSION['id2'];
+
+                      $consulta1= "SELECT * FROM rp";
+
+                      $resultado1 = mysqli_query( $conexion, $consulta1 ) or die ( "Algo ha ido mal en la consulta a la base de datos.");
+
+
+                    	while ($columna = mysqli_fetch_array( $resultado1 ))
+                    	{
+
+
+                    	  echo "<tr><td>".utf8_encode($columna['nombrerp'])."</td><td>".utf8_encode($columna['permisos'])."</td>
+
+
+                        <td><a  type='submit'style='color:black;' class='btn btn-primary btn-lg' href='cambiarPermisosRp.php?id=".$columna['id']." '>Cambiar</a></td></tr>  ";
+
+                    	}
+
+
+
+
+
+
+                    	mysqli_close( $conexion );
+                        ?>
+                  </tbody>
+                </table>
                 </form>
               </div>
             </div>
@@ -129,6 +126,8 @@ $idEmpresa = $_SESSION["empresa"];
     <script src="js/demo/datatables-demo.js"></script>
     <script src="js/demo/chart-area-demo.js"></script>
 
+
+        <script src="confirmacion.js"></script>
   </body>
 
 </html>

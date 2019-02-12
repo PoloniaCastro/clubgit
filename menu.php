@@ -234,6 +234,7 @@ if ( $_SESSION['permisos']==0 ) {
 
             <a class="dropdown-item" href="registrarRp.php">Registrar RP </a>
             <a class="dropdown-item" href="listarRp.php">Listar RP</a>
+
             </div>
 
             </li>
@@ -285,6 +286,19 @@ if ( $_SESSION['permisos']==0 ) {
             </div>
 
         </li>
+
+        <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <i class="fas fa-fw fa-table"></i>
+    <span>Permisos</span></a>
+    <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+
+      <a class="dropdown-item" href="permisosRp.php">Modificar Permisos</a>
+      <a class="dropdown-item" href="permisosFiestaRp.php">Permisos por Fiesta</a>
+    </div>
+
+</li>
+
         <li class="nav-item">
   <a class="nav-link" href="#">
     <i class="fas fa-fw fa-table"></i>
