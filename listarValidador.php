@@ -47,9 +47,9 @@ include_once("menu.php");
 
                     	  echo "<tr><td>".utf8_encode($columna['nombrerp'])."</td>
 
-                        <td><a OnClick='confirmar(event)' type='submit'style='color:black;' class='btn btn-primary btn-lg' href='ejecutarEliminarValidador.php?id=".$columna['id']." '>Eliminar</a></td>
-                        <td><a  type='submit'style='color:black;' class='btn btn-primary btn-lg' href='editarValidador.php?id=".$columna['id']." '>Editar</a></td>
-                        <td><a  type='submit'style='color:black;' class='btn btn-primary btn-lg' href='fiestasValidador.php?id=".$columna['id']." '>Fiestas</a></td></tr>  ";
+                        <td><a OnClick='confirmar(event)' type='submit'style='color:black;' class='btn btn-primary btn-lg' href='ejecutarEliminarValidador.php?id=".$columna['id']." '><i title='Eliminar' class='fas fa-trash-alt'></i></a></td>
+                        <td><a  type='submit'style='color:black;' class='btn btn-primary btn-lg' href='editarValidador.php?id=".$columna['id']." '><i title='Editar' class='fas fa-edit'></i></a></td>
+                        <td><a  type='submit'style='color:black;' class='btn btn-primary btn-lg' href='fiestasValidador.php?id=".$columna['id']." '><i title ='Ver Fiestas' class='fas fa-eye'></i></a></td></tr>  ";
 
                     	}
 

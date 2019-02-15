@@ -7,11 +7,20 @@ $nombreFiesta = utf8_decode($_POST["txtNombreFiesta"]);
 $lugar = utf8_decode($_POST["txtLugar"]);
 $fecha = $_POST["txtFecha"];
 $hora = $_POST["txtHora"];
+$ciudad = utf8_decode($_POST["txtCiudad"]);
+$horaFinal = $_POST["txtHoraTermino"];
+$calle = utf8_decode($_POST["txtDireccion"]);
+$numero = $_POST["txtNumero"];
+$comuna = utf8_decode($_POST["txtComuna"]);
+$cantidadAsis = $_POST["txtCantidad"];
 $empresa = $_POST["SelectEmpresa"];
 $idEmpresa = $_SESSION["empresa"];
+$evento = utf8_decode($_POST["txtEvento"]);
 
-$consulta = "INSERT INTO fiestas(nombre_fiesta, lugar_fiesta, fecha_fiesta,hora_fiesta, id_empresa)
-VALUES ('".$nombreFiesta."', '".$lugar."', '".$fecha."', '".$hora."', '".$empresa."' )";
+$consulta = "INSERT INTO fiestas(nombre_fiesta, lugar_fiesta, id_empresa, fecha_fiesta,hora_fiesta, ciudad_fiesta, hora_termino,
+calle_fiesta, numero, comuna_fiesta, cantidad_asistentes, nombre_evento)
+VALUES ('".$nombreFiesta."', '".$lugar."', '".$empresa."', '".$fecha."', '".$hora."', '".$ciudad."', '".$horaFinal."',
+'".$calle."', '".$numero."', '".$comuna."', '".$cantidadAsis."','".$evento."' )";
 $resultado = mysqli_query( $conexion, $consulta ) or die ( "Algo ha ido mal en la consulta a la base de datos");
 
 $consulta2 = "SELECT id_fiesta FROM fiestas order by id_fiesta desc limit 0,1";

@@ -45,8 +45,8 @@ if ($_SESSION) {
 
                   <a class="card-footer text-white clearfix small z-1" href="#">
 
-                    <a OnClick='confirmar(event)' type="submit" style="color:black;"  class="btn btn-primary btn-lg" href="ejecutarEliminarFiesta.php?id_fiesta=<? echo  utf8_encode($columna2['id_fiesta']); ?>"> Eliminar</a>
-                    <a  type="submit" style="color:black;"  class="btn btn-primary btn-lg" href="editarFiesta.php?id_fiesta=<? echo  utf8_encode($columna2['id_fiesta']); ?>"> Editar</a>
+                    <a OnClick='confirmar(event)' type="submit" style="color:black;"  class="btn btn-primary btn-lg" href="ejecutarEliminarFiesta.php?id_fiesta=<? echo  utf8_encode($columna2['id_fiesta']); ?>"> <i title='Eliminar' class="fas fa-trash-alt"></i></a>
+                    <a  type="submit" style="color:black;"  class="btn btn-primary btn-lg" href="editarFiesta.php?id_fiesta=<? echo  utf8_encode($columna2['id_fiesta']); ?>"> <i title='Editar' class="fas fa-edit"></i></a>
 
                     <span class="float-right">
 

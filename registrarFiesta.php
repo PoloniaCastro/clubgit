@@ -30,7 +30,7 @@ if ($_SESSION['permisos']==1) {
                     </tr>
                     <tr>
                       <td>Nombre de fiesta</td>
-                      <td><input type="text" class="form-control" name="txtNombreFiesta" placeholder="Nombre"/></td>
+                      <td><input type="text" class="form-control" name="txtNombreFiesta" placeholder="Ej: SummerTour"/></td>
                     <td>&nbsp;</td>
                     </tr>
                     <tr>
@@ -38,8 +38,53 @@ if ($_SESSION['permisos']==1) {
 
                     </tr>
                     <tr>
-                      <td>Lugar</td>
-                      <td><input type="text" style="width:300px;height:30px" class="form-control form-control- " name="txtLugar" placeholder="Ej: Viña del Mar"/></td>
+                      <td>Nombre evento</td>
+                      <td><input type="text" class="form-control" name="txtEvento" placeholder="Ej: Club 80"/></td>
+                    <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+            <td>&nbsp;</td>
+
+                    </tr>
+                    <tr>
+                      <td>Nombre Lugar</td>
+                      <td><input type="text" style="width:300px;height:30px" class="form-control form-control- " name="txtLugar" placeholder="Ej: Sporting"/></td>
+                      </th>
+                    </tr>
+                    <tr>
+            <td>&nbsp;</td>
+
+                    </tr>
+                    <tr>
+                      <td>Ciudad</td>
+                      <td><input type="text" style="width:300px;height:30px" class="form-control form-control- " name="txtCiudad" placeholder="Ej: Viña del Mar"/></td>
+                      </th>
+                    </tr>
+                    <tr>
+            <td>&nbsp;</td>
+
+                    </tr>
+                    <tr>
+                      <td>Dirección</td>
+                      <td><input type="text" style="width:300px;height:30px" class="form-control form-control- " name="txtDireccion" placeholder="Ej: Los Castaños"/></td>
+                      </th>
+                    </tr>
+                    <tr>
+            <td>&nbsp;</td>
+
+                    </tr>
+                    <tr>
+                      <td>Nº</td>
+                      <td><input type="text" style="width:300px;height:30px" class="form-control form-control- " name="txtNumero" placeholder="Ej: 404"/></td>
+                      </th>
+                    </tr>
+                    <tr>
+            <td>&nbsp;</td>
+
+                    </tr>
+                    <tr>
+                      <td>Comuna</td>
+                      <td><input type="text" style="width:300px;height:30px" class="form-control form-control- " name="txtComuna" placeholder="Ej: Viña del mar"/></td>
                       </th>
                     </tr>
                     <tr>
@@ -58,6 +103,24 @@ if ($_SESSION['permisos']==1) {
                     <tr>
                       <td>Hora</td>
                       <td><input type="text" style="width:300px;height:30px" class="form-control form-control- " name="txtHora" placeholder="HH:MM"/></td>
+                      </th>
+                    </tr>
+                    <tr>
+            <td>&nbsp;</td>
+
+                    </tr>
+                    <tr>
+                      <td>Hora Término</td>
+                      <td><input type="text" style="width:300px;height:30px" class="form-control form-control- " name="txtHoraTermino" placeholder="Ej: HH:MM"/></td>
+                      </th>
+                    </tr>
+                    <tr>
+            <td>&nbsp;</td>
+
+                    </tr>
+                    <tr>
+                      <td>Cantidad Asistentes</td>
+                      <td><input type="text" style="width:300px;height:30px" class="form-control form-control- " name="txtCantidad" placeholder="Ej: 1500"/></td>
                       </th>
                     </tr>
                     <tr>

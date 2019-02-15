@@ -17,8 +17,8 @@ include_once("menu.php");
                       <th>Nombre</th>
 
                       <th>RP</th>
-                      <th></th>
-                      <th></th>
+                      <th>Eliminar</th>
+                      <th>Editar</th>
                     </tr>
                   </thead>
                   <tfoot>
@@ -26,8 +26,8 @@ include_once("menu.php");
                       <th>Nombre</th>
 
                       <th>RP</th>
-                      <th></th>
-                      <th></th>
+                      <th>Eliminar</th>
+                      <th>Editar</th>
                     </tr>
                   </tfoot>
                   <tbody>
@@ -48,8 +48,8 @@ include_once("menu.php");
 
                     	  echo "<tr><td>".utf8_encode($columna['nombre_repartidor'])."</td><td>".utf8_encode($columna['nombrerp'])."</td>
 
-                        <td><a OnClick='confirmar(event)' type='submit'style='color:black;' class='btn btn-primary btn-lg' href='ejecutarEliminarListaRepartidores.php?id_repartidor=".$columna['id_repartidor']." &id_rp=".$rpapp."'>Eliminar</a></td>
-                        <td><a type='submit'style='color:black;' class='btn btn-primary btn-lg' href='modificarRepartidores.php?id_repartidor=".$columna['id_repartidor']." &id_rp=".$rpapp."'>Editar</a></td></tr>  ";
+                        <td><a OnClick='confirmar(event)' type='submit'style='color:black;' class='btn btn-primary btn-lg' href='ejecutarEliminarListaRepartidores.php?id_repartidor=".$columna['id_repartidor']." &id_rp=".$rpapp."'><i title='Eliminar' class='fas fa-trash-alt'></i></a></td>
+                        <td><a type='submit'style='color:black;' class='btn btn-primary btn-lg' href='modificarRepartidores.php?id_repartidor=".$columna['id_repartidor']." &id_rp=".$rpapp."'><i title='Editar' class='fas fa-edit'></i></a></td></tr>  ";
 
                     	}
 

@@ -18,7 +18,7 @@ include_once("menu.php");
                       <th>Nombre</th>
 
 
-                      <th></th>
+                      <th>Fiestas</th>
                     </tr>
                   </thead>
                   <tfoot>
@@ -26,7 +26,7 @@ include_once("menu.php");
                       <th>Nombre</th>
 
 
-                      <th></th>
+                      <th>Fiestas</th>
                     </tr>
 
                   </tfoot>
@@ -48,7 +48,7 @@ include_once("menu.php");
                     	  echo "<tr><td>".utf8_encode($columna['nombrerp'])."</td>
 
 
-                        <td><a  type='submit'style='color:black;' class='btn btn-primary btn-lg' href='verFiestaRp.php?id=".$columna['id']." '>Ver</a></td></tr>  ";
+                        <td><a  type='submit'style='color:black;' class='btn btn-primary btn-lg' href='verFiestaRp.php?id=".$columna['id']." '><i title ='Ver Fiestas' class='fas fa-eye'></i></a></td></tr>  ";
 
                     	}
 

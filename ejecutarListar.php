@@ -86,8 +86,8 @@ $idFiesta= $_GET["SelectFiesta"];
 
                     	  echo "<tr><td>".utf8_encode($columna['nombre'])."</td><td>".utf8_encode($columna['nombrerp'])."</td><td>".utf8_encode($columna['nombre_repartidor'])."</td><td>".utf8_encode($columna['nombre_fiesta'])."</td><td>".utf8_encode($columna['estate'])."</td>
 
-                        <td><a OnClick='confirmar(event)'  type='submit'style='color:black;' class='btn btn-primary btn-lg' href='ejecutarEliminarLista.php?id_asistencia=".$columna['id_asistencia']."&id_rp=".$rpapp." '>Eliminar</a>
-                        <a  type='submit' style='color:black;''  class='btn btn-primary btn-lg' href='editarAsistentes.php?id_asistencia=".$columna['id_asistencia']."'> Editar </a></td></tr>  ";
+                        <td><a OnClick='confirmar(event)'  type='submit'style='color:black;' class='btn btn-primary btn-lg' href='ejecutarEliminarLista.php?id_asistencia=".$columna['id_asistencia']."&id_rp=".$rpapp." '><i title='Eliminar' class='fas fa-trash-alt'></i></a>
+                        <a  type='submit' style='color:black;''  class='btn btn-primary btn-lg' href='editarAsistentes.php?id_asistencia=".$columna['id_asistencia']." '> <i title='Editar' class='fas fa-edit'></i> </a></td></tr>  ";
 
                     	}
 

@@ -211,6 +211,7 @@ if ( $_SESSION['permisos']==0 ) {
                 <a class="dropdown-item" href="registrarAsistente.php">Registrar asistentes</a>
                 <a class="dropdown-item" href="listar.php">Listar asistentes</a>
                 <a class="dropdown-item" href="listarTodosFiesta.php">Lista General</a>
+                <a class="dropdown-item" href="reportesFiesta.php">Generar Reportes</a>
                 </div>
 
                 </li>
@@ -246,6 +247,7 @@ if ( $_SESSION['permisos']==0 ) {
 
           <a class="dropdown-item" href="registrarFiesta.php">Registrar Fiesta </a>
           <a class="dropdown-item" href="index.php">Listar Fiesta</a>
+          <a class="dropdown-item" href="bloquearFiestasRp.php">Bloquear Fiestas a Rp</a>
           </div>
 
           </li>
@@ -298,13 +300,19 @@ if ( $_SESSION['permisos']==0 ) {
     </div>
 
 </li>
-
-        <li class="nav-item">
-  <a class="nav-link" href="#">
-    <i class="fas fa-fw fa-table"></i>
-    <span>Centro de documentos</span></a>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<i class="fas fa-fw fa-table"></i>
+<span>Centro Documentos</span></a>
+<div class="dropdown-menu" aria-labelledby="pagesDropdown">
+<a class="dropdown-item" href="documentosFiestas.php">Superintendencia</a>
+<a class="dropdown-item" href="documentosFiestas.php">Municipalidad</a>
+<a class="dropdown-item" href="miPdf.php">Ver</a>
+</div>
 
 </li>
+
+
 <?} ?>
 
 

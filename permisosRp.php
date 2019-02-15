@@ -17,7 +17,7 @@ include_once("menu.php");
                       <th>Nombre</th>
                       <th>Permiso actual</th>
 
-                      <th></th>
+                      <th>Modificar</th>
                     </tr>
                   </thead>
                   <tfoot>
@@ -25,7 +25,7 @@ include_once("menu.php");
                       <th>Nombre</th>
                       <th>Permiso actual</th>
 
-                      <th></th>
+                      <th>Modificar</th>
                     </tr>
                   </tfoot>
                   <tbody>
@@ -41,12 +41,35 @@ include_once("menu.php");
 
                     	while ($columna = mysqli_fetch_array( $resultado1 ))
                     	{
+                        $permisosAdmin = "Administrador";
+                        $permisosValidadores = "Validador";
+                        $permisosSoloVista = "Solo Vista";
+                        $permisosRp = "Rp";
+                        if($columna['permisos']==1)
+                          {
+                            echo "<tr><td>".utf8_encode($columna['nombrerp'])."</td><td>".utf8_encode($permisosAdmin)."</td>
+                            <td><a  type='submit'style='color:black;' class='btn btn-primary btn-lg' href='cambiarPermisosRp.php?id=".$columna['id']." '><i title='Modificar' class='fas fa-edit'></i></a></td></tr>  ";
 
+                          }
+                          if($columna['permisos']==0)
+                            {
+                              echo "<tr><td>".utf8_encode($columna['nombrerp'])."</td><td>".utf8_encode($permisosRp)."</td>
+                              <td><a  type='submit'style='color:black;' class='btn btn-primary btn-lg' href='cambiarPermisosRp.php?id=".$columna['id']." '><i title='Modificar' class='fas fa-edit'></i></a></td></tr>  ";
 
-                    	  echo "<tr><td>".utf8_encode($columna['nombrerp'])."</td><td>".utf8_encode($columna['permisos'])."</td>
+                            }
+                            if($columna['permisos']==3)
+                              {
+                                echo "<tr><td>".utf8_encode($columna['nombrerp'])."</td><td>".utf8_encode($permisosValidadores)."</td>
+                                <td><a  type='submit'style='color:black;' class='btn btn-primary btn-lg' href='cambiarPermisosRp.php?id=".$columna['id']." '><i title='Modificar' class='fas fa-edit'></i></a></td></tr>  ";
 
+                              }
+                              if($columna['permisos']==2)
+                                {
+                                  echo "<tr><td>".utf8_encode($columna['nombrerp'])."</td><td>".utf8_encode($permisosSoloVista)."</td>
+                                  <td><a  type='submit'style='color:black;' class='btn btn-primary btn-lg' href='cambiarPermisosRp.php?id=".$columna['id']." '><i title='Modificar' class='fas fa-edit'></i></a></td></tr>  ";
 
-                        <td><a  type='submit'style='color:black;' class='btn btn-primary btn-lg' href='cambiarPermisosRp.php?id=".$columna['id']." '>Cambiar</a></td></tr>  ";
+                                }
+
 
                     	}
 

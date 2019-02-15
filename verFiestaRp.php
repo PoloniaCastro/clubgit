@@ -56,7 +56,7 @@ $idRp = $_GET["id"];
                       	  echo "<tr><td>".utf8_encode($columna['nombre_fiesta'])."</td>
 
 
-                          <td><a  type='submit'style='color:black;' class='btn btn-primary btn-lg' href='bloquearFiesta.php?id_fiesta=".$columna['id_fiesta']."& id=".$columnaRp['id']."'>Bloquear</a></td></tr>  ";
+                          <td><a  type='submit'style='color:black;' class='btn btn-primary btn-lg' href='bloquearFiesta.php?id_fiesta=".$columna['id_fiesta']."& id=".$columnaRp['id']."'><i title='Bloquear' class='fas fa-times-circle'></i></a></td></tr>  ";
 
                       	}
 
@@ -97,7 +97,7 @@ $idRp = $_GET["id"];
 
                     	  echo "<tr><td>".utf8_encode($columna['nombre_fiesta'])."</td>
 
-                        <td><a  type='submit'style='color:black;' class='btn btn-primary btn-lg' href='accederFiesta.php?id_fiesta=".$columna['id_fiesta']." & id=".$columnaRp['id']."'>Acceder</a></td>
+                        <td><a  type='submit'style='color:black;' class='btn btn-primary btn-lg' href='accederFiesta.php?id_fiesta=".$columna['id_fiesta']." & id=".$columnaRp['id']."'><i title='Permitir' class='fas fa-check-circle'></i></a></td>
                         </tr>  ";
 
                     	}
