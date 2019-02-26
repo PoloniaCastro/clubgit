@@ -212,6 +212,7 @@ if ( $_SESSION['permisos']==0 ) {
                 <a class="dropdown-item" href="listar.php">Listar asistentes</a>
                 <a class="dropdown-item" href="listarTodosFiesta.php">Lista General</a>
                 <a class="dropdown-item" href="reportesFiesta.php">Generar Reportes</a>
+                <a class="dropdown-item" href="inscripcionFiesta.php">Inscripción Automática</a>
                 </div>
 
                 </li>

@@ -115,7 +115,7 @@ $idEmpresa = $_SESSION["empresa"];
 
                     </tr>
 
-                    
+
 
                     <tr>
                       <td>Fiesta</td>

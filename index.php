@@ -67,7 +67,57 @@ echo "Bienvenido RP, para ingresar gente revise su menú lateral";
             }
 
           }else{
-            echo "Para ver este contenido debe iniciar sesión";
+            //echo "Para ver este contenido debe iniciar sesión";
+//inscripcionAutomatica
+
+//$idFiesta = $_GET['id_fiesta'];
+
+
+
+$consulta2 = "SELECT * FROM fiestas WHERE inscripcion_automatica = 1";
+$resultado2 = mysqli_query( $conexion, $consulta2 ) or die ( "Algo ha ido mal en la consulta a la base de datos. ".$rpapp." ");
+while ($columna2 = mysqli_fetch_array( $resultado2 ))
+{
+  $timestamp = strtotime($columna2['hora_fiesta']);
+  ?>
+  <div class="col-xl-3 col-sm-6">
+    <div class="card text-white bg-info o-hidden h-100">
+      <div class="card-body">
+        <div class="card-body-icon">
+          <i class="fas fa-fw fa-life-ring"></i>
+        </div>
+        <div class="mr-5"><? echo utf8_encode($columna2['nombre_fiesta']); ?></div>
+        <div class="mr-5">Lugar:<? echo  utf8_encode($columna2['lugar_fiesta']); ?></div>
+        <div class="mr-5">Fecha:<? echo  date('j/m/Y',strtotime($columna2['fecha_fiesta'])); ?></div>
+        <div class="mr-5">Hora:<? echo  date('H:i',$timestamp) ; ?></div>
+
+
+        </div>
+
+      <a class="card-footer text-white clearfix small z-1" href="#">
+
+
+        <a  type="submit" style="color:black;"  class="btn btn-primary btn-lg" href="inscripcionAutomatica.php?id_fiesta=<? echo  utf8_encode($columna2['id_fiesta']); ?>"> <i title='Inscríbete' class="fas fa-edit"></i></a>
+
+        <span class="float-right">
+
+        </span>
+
+      </a>
+
+    </div>
+
+  </div>
+  <?
+}
+
+
+
+
+
+
+
+//fin inscripcionAutomatica
           }
 ?>
 

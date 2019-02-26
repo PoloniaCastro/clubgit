@@ -9,6 +9,7 @@ $contraseniaRp = $_POST["txtContrasenia"];
 $contrasenia = md5($contraseniaRp);
 $nom = utf8_decode($nombreRp);
 $sinRepartidor = "Sin repartidor";
+$repartidorAutomatico = utf8_decode("Automático");
 $limite = $_POST["txtLimite"];
 
 $consultaSelect = "SELECT * FROM rp where correo='$correoRp'";
@@ -26,15 +27,29 @@ if($scan ==0)
   {
     $consulta3 = "INSERT INTO repartidores(id_rp, nombre_repartidor) VALUES ('".$columna['id']."', '".$sinRepartidor."')";
     $resultado3 = mysqli_query( $conexion, $consulta3 ) or die ( "Algo ha ido mal en la 4º consulta a la base de datos");
-    if($resultado3)
+    if($columna['id'] == 1)
     {
-      echo "<script>
-                 alert('Registro  de RP exitoso');
-                 window.location= 'registrarRp.php'
-     </script>";
+      $consulta5 = "INSERT INTO repartidores(id_rp, nombre_repartidor) VALUES ('".$columna4['id']."', '".$repartidorAutomatico."')";
+      $resultado5 = mysqli_query( $conexion, $consulta5 ) or die ( "Algo ha ido mal en la 6º consulta a la base de datos");
+      if($resultado5)
+      {
+        echo "<script>
+                   alert('Registro  de RP exitoso');
+                   window.location= 'registrarRp.php'
+       </script>";
+      }
+    }
+      if($resultado3)
+      {
+        echo "<script>
+                   alert('Registro  de RP exitoso');
+                   window.location= 'registrarRp.php'
+       </script>";
+      }
     }
 
-  }
+
+
 
 
 
