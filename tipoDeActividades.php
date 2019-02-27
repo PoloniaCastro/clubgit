@@ -1,6 +1,7 @@
 <?php
 require('fpdf/fpdf.php');
 include_once("clases/conexion.php");
+
 setlocale(LC_TIME, "spanish","es_ES@euro","es_ES","esp");
 session_start();
 $idFiesta = $_GET["id_fiesta"];
