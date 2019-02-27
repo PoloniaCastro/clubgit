@@ -9,9 +9,11 @@ $direccionEm = utf8_decode($_POST["txtDireccion"]);
 $nomLegal = utf8_decode($_POST["txtNombreLegal"]);
 $telefonoEm = $_POST["txtTelefono"];
 $correoEm =$_POST["txtCorreo"];
+$rutLegal = $_POST["txtRutLegal"];
+$tele_fijo = $_POST["txtTelefonoFijo"];
 
 
-$consulta = "UPDATE empresas SET  nombre_empresas = '".$nombre."', rut_empresas = '".$rutEm."', direccion_empresas ='".$direccionEm."', nombre_repr_legal='".$nomLegal."', telefono='".$telefonoEm."', correo_empresas='".$correoEm."'
+$consulta = "UPDATE empresas SET  nombre_empresas = '".$nombre."', rut_empresas = '".$rutEm."', direccion_empresas ='".$direccionEm."', nombre_repr_legal='".$nomLegal."', telefono='".$telefonoEm."', correo_empresas='".$correoEm."', rut_legal='".$rutLegal."', telefono_fijo='".$tele_fijo."'
 WHERE id_empresas= '". $_SESSION['empresa']."'";
 $resultado = mysqli_query( $conexion, $consulta ) or die ( "Algo ha ido mal en la consulta a la base de datos");
 
@@ -38,12 +40,19 @@ while ($columna = mysqli_fetch_array( $resultadoSelect ))
       {
         echo "<script>
                    alert('Modificación exitosa');
-                   
+
                    window.location= 'verEmpresa.php'
        </script>";
      }
   }
+  if($resultado)
+  {
+    echo "<script>
+               alert('Modificación exitosa');
 
+               window.location= 'verEmpresa.php'
+   </script>";
+  }
 
 
 

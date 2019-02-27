@@ -52,17 +52,19 @@ $comuna= utf8_decode($columna2['comuna_fiesta']);
 $lugar = utf8_decode($columna2['lugar_fiesta']);
 $calle = utf8_decode($columna2['calle_fiesta']);
 $evento =utf8_decode($columna2['nombre_evento']);
-$empresa = $columna2['nombre_empresas'];
+$empresa = utf8_decode($columna2['nombre_empresas']);
 $cantidad = $columna2['cantidad_asistentes'];
 $varEdadMin = "edad";
 $varEdadMax ="edad";
-$varEspacio ="cambiar variable";
-$rutLegal ="FALta rut legal";
-$fijo= "falta fijo";
-$correoRepre= "falta email";
+$varEspacio =utf8_decode($columna2['espacio']);
+$rutLegal =$columna2['rut_legal'];
+$fijo= $columna2['telefono_fijo'];
+$correo= utf8_decode($columna2['correo_empresas']);
 $mini ="            ";
+$tipoFiesta =utf8_decode($columna2['tipo_fiesta']);
+$edad =utf8_decode($columna2['rango_etario']);
 $pdf->Image('img/G_valparaiso.jpg',25,15,38,38);
-$pdf->Cell(15,30,''.$espacio.''.$espacio.''.$espacio.''.strtoupper($comuna).', '.$mes.' del '.$fechaAnio.'.',0,1);
+$pdf->Cell(15,30,''.$espacio.''.$espacio.''.$espacio.''.strtoupper($comuna).', '.date("d").' '.$mes.' del '.$fechaAnio.'.',0,1);
 $pdf->SetFont('Arial','',11);
 $pdf->Cell(10,15,utf8_decode(''),0,1);
 $pdf->Cell(10,5,utf8_decode(''.$mini.'Señor'),0,1);
@@ -75,12 +77,12 @@ $pdf->Cell(10,5,'',0,1);
 $pdf->SetFont('Arial','B',11);
 $pdf->Cell(10,5,utf8_decode(''.$mini.'TIPO DE ACTIVIDAD(BREVE DESCRIPCIÓN):'),0,1);
 $pdf->Cell(10,5,'',0,1);
-$pdf->Cell(10,5,utf8_decode(''.$mini.'CONCIERTOS, CARNAVALES, FIESTAS, OTROS'),0,1);
+$pdf->Cell(10,5,utf8_decode(''.$mini.'(CONCIERTOS, CARNAVALES, FIESTAS, OTROS)'),0,1);
 $pdf->Cell(10,5,'',0,1);
 $pdf->SetFont('Arial','',11);
-$pdf->Cell(10,5,utf8_decode(''.$mini.'ESTA LÍNEA SE DEBE MODIFICAR'),0,1);
+$pdf->Cell(10,5,utf8_decode(''.$mini.strtoupper($tipoFiesta).''),0,1);
 $pdf->Cell(10,5,utf8_decode(''.$mini.'EVENTO PRIVADO DENOMINADO "'.strtoupper($evento).'"'),0,1);
-$pdf->Cell(10,5,utf8_decode(''.$mini.'RANGO ETARIO DE '.$varEdadMin.' A '.$varEdadMax.' AÑOS'),0,1);
+$pdf->Cell(10,5,utf8_decode(''.$mini.'RANGO ETARIO DE '.strtoupper($edad).' AÑOS'),0,1);
 $pdf->Cell(10,5,utf8_decode(''.$mini.'ACCESO CON INVITACIÓN'),0,1);
 $pdf->Cell(10,5,'',0,1);
 $pdf->SetFont('Arial','B',11);
@@ -117,7 +119,7 @@ $pdf->Cell(10,5,utf8_decode(''.$mini.''.$mini.''.$mini.''.$horafinal.' HRS. '),0
 $pdf->SetFont('Arial','B',11);
 $pdf->Cell(10,5,utf8_decode(''.$mini.'AFORO: '),0,0);
 $pdf->SetFont('Arial','',11);
-$pdf->Cell(10,5,utf8_decode(''.$mini.''.$mini.''.$mini.''.$cantidad.' HRS. '),0,1);
+$pdf->Cell(10,5,utf8_decode(''.$mini.''.$mini.''.$mini.''.$cantidad.' PERSONAS. '),0,1);
 $pdf->Cell(10,5,'',0,1);
 $pdf->SetFont('Arial','B',11);
 $pdf->Cell(10,5,utf8_decode(''.$mini.'RESPONSABLE: '),0,1);
@@ -153,7 +155,7 @@ $pdf->Cell(10,5,utf8_decode(''.$mini.''.$mini.''.$mini.''.$mini.''.$columna2['te
 $pdf->SetFont('Arial','B',11);
 $pdf->Cell(10,5,utf8_decode(''.$mini.'EMAIL '),0,0);
 $pdf->SetFont('Arial','',11);
-$pdf->Cell(10,5,utf8_decode(''.$mini.''.$mini.''.$mini.''.$mini.''.$correoRepre.''),0,1);
+$pdf->Cell(10,5,utf8_decode(''.$mini.''.$mini.''.$mini.''.$mini.''.$correo.''),0,1);
 $pdf->SetFont('Arial','',11);
 $pdf->Cell(10,5,'',0,1);
 $pdf->Cell(10,5,'',0,1);
@@ -164,5 +166,5 @@ $pdf->Cell(10,5,''.$espacio.''.$mini.''.$mini.''.$mini.''.$mini.''.$mini.' FIRMA
 
 $pdf->Output();
 }
-//$pdf->Image('img/G_valparaiso.jpg',25,15,38,38);
+
 ?>

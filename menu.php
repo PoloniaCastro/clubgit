@@ -306,8 +306,6 @@ if ( $_SESSION['permisos']==0 ) {
 <i class="fas fa-fw fa-table"></i>
 <span>Centro Documentos</span></a>
 <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-<a class="dropdown-item" href="documentosFiestas.php">Superintendencia</a>
-<a class="dropdown-item" href="documentosFiestas.php">Municipalidad</a>
 <a class="dropdown-item" href="miPdf.php">Ver</a>
 </div>
 

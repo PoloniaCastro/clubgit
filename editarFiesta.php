@@ -44,12 +44,53 @@ if ($_SESSION['permisos']==1) {
 
                     </tr>
                     <tr>
-                      <td>Lugar</td>
+                      <td>Nombre Evento</td>
+                      <td><input type="text" class="form-control" name="txtnombreEvento" placeholder="Ej: Club 80" value="<? echo utf8_encode($columna['nombre_evento']); ?>"/></td>
+                    <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+            <td>&nbsp;</td>
+
+                    </tr>
+                    <tr>
+                      <td>Nombre Lugar</td>
                       <td><input type="text" style="width:300px;height:30px" class="form-control form-control- " name="txtLugar" placeholder="Ej: Viña del Mar" value="<? echo utf8_encode($columna['lugar_fiesta']); ?>"/></td>
                       </th>
                     </tr>
                     <tr>
             <td>&nbsp;</td>
+            <tr>
+              <td>Ciudad</td>
+              <td><input type="text" class="form-control" name="txtCiudad" placeholder="Ej:Viña del mar" value="<? echo utf8_encode($columna['ciudad_fiesta']); ?>"/></td>
+            <td>&nbsp;</td>
+            </tr>
+            <tr>
+    <td>&nbsp;</td>
+
+    <tr>
+      <td>Dirección</td>
+      <td><input type="text" class="form-control" name="txtDireccion" placeholder="Ej:Los castaños" value="<? echo utf8_encode($columna['calle_fiesta']); ?>"/></td>
+    <td>&nbsp;</td>
+    </tr>
+    <tr>
+<td>&nbsp;</td>
+<tr>
+  <td>Nº</td>
+  <td><input type="text" class="form-control" name="txtNumero" placeholder="Ej:404" value="<? echo utf8_encode($columna['numero']); ?>"/></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<tr>
+  <td>Comuna</td>
+  <td><input type="text" class="form-control" name="txtComuna" placeholder="Ej:Viña del mar" value="<? echo utf8_encode($columna['comuna_fiesta']); ?>"/></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+
+
+            </tr>
 <input type="hidden" name="id_fiesta" value="<?=$idFiesta?>"
                     </tr>
                     <tr>
@@ -64,6 +105,52 @@ if ($_SESSION['permisos']==1) {
                     <tr>
                       <td>Hora</td>
                       <td><input type="text" style="width:300px;height:30px" class="form-control form-control- " name="txtHora" placeholder="HH:MM" value="<? echo $columna['hora_fiesta']; ?>"/></td>
+                      </th>
+                    </tr>
+                    <tr>
+            <td>&nbsp;</td>
+
+                    </tr>
+
+                    <tr>
+                      <td>Hora Término</td>
+                      <td><input type="text" style="width:300px;height:30px" class="form-control form-control- " name="txtHoraTermino" placeholder="HH:MM" value="<? echo $columna['hora_termino']; ?>"/></td>
+                      </th>
+                    </tr>
+                    <tr>
+            <td>&nbsp;</td>
+
+                    </tr>
+                    <tr>
+                      <td>Cantidad Asistentes</td>
+                      <td><input type="text" style="width:300px;height:30px" class="form-control form-control- " name="txtCantidad" placeholder="ej:1500" value="<? echo $columna['cantidad_asistentes']; ?>"/></td>
+                      </th>
+                    </tr>
+                    <tr>
+            <td>&nbsp;</td>
+
+                    </tr>
+                    <tr>
+                      <td>Tipo Fiesta</td>
+                      <td><input type="text" style="width:300px;height:30px" class="form-control form-control- " name="txtFiesta" placeholder="ej: fiesta conceptual 80's & 90's" value="<? echo utf8_encode($columna['tipo_fiesta']); ?>"/></td>
+                      </th>
+                    </tr>
+                    <tr>
+            <td>&nbsp;</td>
+
+                    </tr>
+                    <tr>
+                      <td>Espacio</td>
+                      <td><input type="text" style="width:300px;height:30px" class="form-control form-control- " name="txtEspacio" placeholder="Ej:salón principal y terraza" value="<? echo utf8_encode($columna['espacio']); ?>"/></td>
+                      </th>
+                    </tr>
+                    <tr>
+            <td>&nbsp;</td>
+
+                    </tr>
+                    <tr>
+                      <td>Rango Etario</td>
+                      <td><input type="text" style="width:300px;height:30px" class="form-control form-control- " name="txtRango" placeholder="Ej:35 a 60" value="<? echo utf8_encode($columna['rango_etario']); ?>"/></td>
                       </th>
                     </tr>
                     <tr>

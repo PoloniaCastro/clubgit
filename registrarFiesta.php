@@ -128,6 +128,35 @@ if ($_SESSION['permisos']==1) {
 
                     </tr>
                     <tr>
+                      <td>Tipo de fiesta</td>
+                      <td><input type="text" style="width:300px;height:30px" class="form-control form-control- " name="txtTipoFiesta" placeholder="Ej: Fiesta conceptual 80's & 90's"/></td>
+                      </th>
+                    </tr>
+                    <tr>
+            <td>&nbsp;</td>
+
+                    </tr>
+                  </tr>
+                  <tr>
+                    <td>Espacio</td>
+                    <td><input type="text" style="width:300px;height:30px" class="form-control form-control- " name="txtEspacio" placeholder="Ej: Salón principal y terraza"/></td>
+                    </th>
+                  </tr>
+                  <tr>
+          <td>&nbsp;</td>
+
+                  </tr>
+                </tr>
+                <tr>
+                  <td>Rango Etario</td>
+                  <td><input type="text" style="width:300px;height:30px" class="form-control form-control- " name="txtRango" placeholder="Ej: 35 a 60"/></td>
+                  </th>
+                </tr>
+                <tr>
+        <td>&nbsp;</td>
+
+                </tr>
+                    <tr>
                       <td>Empresa</td>
                       <td><select name="SelectEmpresa">
 
@@ -160,6 +189,8 @@ if ($_SESSION['permisos']==1) {
             <td>&nbsp;</td>
 
                     </tr>
+                  </tr>
+
                     <tr>
                       <td></td>
                       <td><div>

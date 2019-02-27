@@ -69,8 +69,26 @@ $idEmpresa = $_SESSION["empresa"];
 
                     </tr>
                     <tr>
+                      <td>Rut Representante Legal</td>
+                      <td><input type="text" readonly class="form-control" name="txtRutLegal" required  placeholder="Rut Representante Legal" value="<? echo utf8_encode($columnaEmpresa['rut_legal']); ?>"/></td>
+                    <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+            <td>&nbsp;</td>
+
+                    </tr>
+                    <tr>
                       <td>Teléfono</td>
                       <td><input type="text" readonly class="form-control" name="txtTelefono" required  placeholder="123456789" value="<? echo utf8_encode($columnaEmpresa['telefono']); ?>"/></td>
+                    <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+            <td>&nbsp;</td>
+
+                    </tr>
+                    <tr>
+                      <td>Teléfono fijo</td>
+                      <td><input type="text" readonly class="form-control" name="txtTelefonoFijo" required  placeholder="123456789" value="<? echo utf8_encode($columnaEmpresa['telefono_fijo']); ?>"/></td>
                     <td>&nbsp;</td>
                     </tr>
                     <tr>
@@ -89,7 +107,7 @@ $idEmpresa = $_SESSION["empresa"];
 
                     </tr>
 
-                    
+
 
 
                     <tr>

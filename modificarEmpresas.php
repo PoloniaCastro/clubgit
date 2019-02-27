@@ -42,7 +42,7 @@ $idEmpresa = $_SESSION["empresa"];
 
                     </tr>
                     <tr>
-                      <td>Rut</td>
+                      <td>Rut Empresa</td>
                       <td><input type="text" class="form-control" name="txtRut" required  placeholder="Rut" value="<? echo utf8_encode($columnaEmpresa['rut_empresas']); ?>"/></td>
                     <td>&nbsp;</td>
                     </tr>
@@ -69,8 +69,26 @@ $idEmpresa = $_SESSION["empresa"];
 
                     </tr>
                     <tr>
+                      <td>Rut Representante Legal</td>
+                      <td><input type="text" class="form-control" name="txtRutLegal" required  placeholder="" value="<? echo utf8_encode($columnaEmpresa['rut_legal']); ?>"/></td>
+                    <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+            <td>&nbsp;</td>
+
+                    </tr>
+                    <tr>
                       <td>Teléfono</td>
                       <td><input type="text" class="form-control" name="txtTelefono" required  placeholder="123456789" value="<? echo utf8_encode($columnaEmpresa['telefono']); ?>"/></td>
+                    <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+            <td>&nbsp;</td>
+
+                    </tr>
+                    <tr>
+                      <td>Teléfono fijo </td>
+                      <td><input type="text" class="form-control" name="txtTelefonoFijo" required  placeholder=" Ej: 123456789" value="<? echo utf8_encode($columnaEmpresa['telefono_fijo']); ?>"/></td>
                     <td>&nbsp;</td>
                     </tr>
                     <tr>
@@ -89,7 +107,7 @@ $idEmpresa = $_SESSION["empresa"];
 
                     </tr>
                     <tr>
-                      <td>Imagen Corporativa (1025x183)</td>
+                      <td>Imagen Corporativa </td>
                       <td><input  type="file" name="imagen" size="35"  class="input-add" /></td>
                       </th>
                     </tr>
