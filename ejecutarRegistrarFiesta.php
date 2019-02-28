@@ -21,9 +21,9 @@ $espacio = utf8_decode($_POST["txtEspacio"]);
 $rango = utf8_decode($_POST["txtRango"]);
 
 $consulta = "INSERT INTO fiestas(nombre_fiesta, lugar_fiesta, id_empresa, fecha_fiesta,hora_fiesta, ciudad_fiesta, hora_termino,
-calle_fiesta, numero, comuna_fiesta, cantidad_asistentes, nombre_evento, tipo_fiesta, espacio, rango_etario)
+calle_fiesta, numero, comuna_fiesta, cantidad_asistentes, nombre_evento, inscripcion_automatica, tipo_fiesta, espacio, rango_etario)
 VALUES ('".$nombreFiesta."', '".$lugar."', '".$empresa."', '".$fecha."', '".$hora."', '".$ciudad."', '".$horaFinal."',
-'".$calle."', '".$numero."', '".$comuna."', '".$cantidadAsis."','".$evento."','".$tipoFiesta."','".$espacio."','".$rango."' )";
+'".$calle."', '".$numero."', '".$comuna."', '".$cantidadAsis."','".$evento."',"0" ,'".$tipoFiesta."','".$espacio."','".$rango."' )";
 $resultado = mysqli_query( $conexion, $consulta ) or die ( "Algo ha ido mal en la consulta a la base de datos");
 
 $consulta2 = "SELECT id_fiesta FROM fiestas order by id_fiesta desc limit 0,1";
